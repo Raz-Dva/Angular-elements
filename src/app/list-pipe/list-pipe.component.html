@@ -1,0 +1,50 @@
+<div class="panel widget ">
+    <div class="panel-heading vd_bg-blue">
+        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>
+    </div>
+    <div class="panel-body-list pd-15">
+        <div class="input-group mgbt-xs-15">
+            <div class="panel widget light-widget">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <h3 style="font-weight: 600;">You can add some item</h3>
+                        <label class="control-label">Name Car</label>
+                        <div class="controls">
+                            <input type="text" placeholder="name of car" [(ngModel)]="itemName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Age Car</label>
+                        <div class="controls">
+                            <input type="number" placeholder="age" [(ngModel)]="itemAge">
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <p class="vd_red">{{errorInput}}</p>
+                        <button style="margin-top:5px;" class="btn vd_btn vd_bg-green" (click)="addItemCar()">Add Item Car</button>
+                        <hr>
+                    </div>
+                    <div class="col-xl-12">
+                        <label class="control-label">Filter the list</label>
+                        <div class="controls">
+                            <input type="text" placeholder="Input name of car" [(ngModel)]="findLetter">
+                            <br>
+                            <!-- <button class="btn vd_btn vd_bg-green" (click)="indexed()">Add Item Car</button> -->
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <ul style="padding-inline-start:0">
+                            <li class="mgbt-xs-10" *ngFor="let item of (listCar |dynamicPipe:findLetter:'name'); let ind = index ">
+                                <strong>{{ind + 1}}) {{item.name}} ---- {{item.age}}</strong>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

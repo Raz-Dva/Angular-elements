@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, Directive } from '@angular/core';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import {  library } from '@fortawesome/fontawesome-svg-core';
+library.add(faBookmark);
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'App Angular Components';
+  faBookmark = faBookmark;
+  
 }

@@ -1,0 +1,19 @@
+<div class="panel widget ">
+    <div class="panel-heading vd_bg-blue">
+        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>
+    </div>
+    <div class="panel-body-list pd-15">
+        <div class="input-group mgbt-xs-15">
+            <div class="panel widget light-widget">
+                <input type="text" [(ngModel)]="data">
+                <!-- <strong>{{data}}</strong> -->
+
+                <strong>число в степени 3 --{{data | appPow:3:','}}</strong>
+                <br>
+                <strong>число в степени 10-- {{data | appPow:10:'.'}}</strong>
+
+
+            </div>
+        </div>
+    </div>
+</div>

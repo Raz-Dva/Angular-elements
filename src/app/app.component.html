@@ -1,20 +1,179 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<main>
+    <div class="container">
+        <!-- ------------ header --------- -->
+        <div class="vd_content-wrapper">
+            <div class="vd_panel-header">
+                <div>
+                    <h1>
+                        Welcome to {{ title }}!
+                    </h1>
+                    <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+                </div>
+                <div class="">
+                    <div class="">
+                        <h2>Here are some links to help you start: </h2>
+                        <ul>
+                            <li>
+                                <p><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></p>
+                            </li>
+                            <li>
+                                <p><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></p>
+                            </li>
+                            <li>
+                                <p><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------table commands---------------->
+        <div class="vd_content-section clearfix">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel widget">
+                        <div class="panel-heading vd_bg-grey">
+                            <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-dot-circle-o"></i> </span> NPM COMMANDS </h3>
+                        </div>
+                        <div class="panel-body table-responsive">
+                            <div id="data-tables_wrapper" class="dataTables_wrapper form-inline no-footer">
+                                <table class="table table-striped dataTable no-footer">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="data-tables" rowspan="1" colspan="1">NPM</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="data-tables" rowspan="1" colspan="1">Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeA" role="row">
+                                            <td class="center">npm install webpack webpack-dev-server typescript -g</td>
+                                            <td class="center">it is recommended to avoid mistakes</td>
+                                        </tr>
+                                        <tr class="gradeA" role="row">
+                                            <td class="center">npm install -g @angular/cli or npm i @angular/cli@6.0.0</td>
+                                            <td class="center">install global angular or need version</td>
+                                        </tr>
+                                        <tr class="gradeA" role="row">
+                                            <td class="center">ng new my-project</td>
+                                            <td class="center">create new project</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">ng serve or npm run start</td>
+                                            <td class="center">run angular server</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">npm uninstall -g angular-cli</td>
+                                            <td class="center">uninstall global angular</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">npm cache clean </td>
+                                            <td class="center">clean cache</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">ng serve --port 5000 </td>
+                                            <td class="center">run server on localhost port 5000</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">npm install --save bootstrap jquery</td>
+                                            <td class="center">install bootstrap and jquery after need to register the paths in the file angular.json </td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">ng generate component my-component or ng g c my-component </td>
+                                            <td class="center">create angular component</td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center"></td>
+                                            <td class="center"></td>
+                                        </tr>
+                                        <tr class="gradeA " role="row">
+                                            <td class="center">ng --version</td>
+                                            <td class="center">current vertion</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- ----------- main panel-------------------->
+        <div class="row">
+            <div class="col-md-6">
+                <app-ng-model></app-ng-model>
+            </div>
+            <div class="col-md-6">
+                <app-ng-if></app-ng-if>
+            </div>
+            <div class="col-md-6">
+                <app-ng-style></app-ng-style>
+            </div>
+            <div class="col-md-6">
+                <app-ng-class></app-ng-class>
+            </div>
+            <div class="col-md-6">
+                <!-- <div class="panel widget ">                    
+                    <div class="panel-heading vd_bg-blue">
+                        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>                
+                    </div>
+                    <div class="panel-body-list pd-15">
+                        <div class="input-group mgbt-xs-15">
+                            <div class="panel widget light-widget">
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="panel widget">
+                    <div class="panel-heading vd_bg-blue">
+                        <h3 class="panel-title"> <span class="menu-icon">
+                            <fa-icon 
+                            [icon]="faBookmark"></fa-icon>
+                         </span> {{title}}</h3>
+
+                    </div>
+                    <div class="panel-body-list pd-15">
+                        <div class="input-group mgbt-xs-15">
+                            <div class="panel widget light-widget">
+                                <div>
+                                    <p appMyDerective>This is my derective. The style of this paragraph is created using "this.renderer.setStyle (this.elementRef.nativeElement, "font-weight", "bold");"</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <app-pipe></app-pipe>
+            </div>
+            <div class="col-md-6">
+                <app-list-pipe></app-list-pipe>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer class="footer-1" id="footer">
+    <div class="vd_bottom ">
+        <div class="container">
+            <div class="row">
+                <div class=" col-xs-12">
+                    <div class="copyright">
+                        Copyright ©2014 Venmond Inc. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+</footer>
