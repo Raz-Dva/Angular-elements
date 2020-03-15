@@ -10,9 +10,7 @@ export class NgClassComponent implements OnInit {
 
   constructor() { }
   title: string = 'ngClass';
-  // wrong:boolean ;
-  // insane:boolean ;
-
+  
   ngOnInit() {
   }
  

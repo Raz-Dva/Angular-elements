@@ -16,6 +16,10 @@ import { PipeComponent } from './pipe/pipe.component';
 import { PowPipe } from './pipe/pow.pipe';
 import { DynamicPipePipe } from './dynamic-pipe/dynamic-pipe.pipe';
 import { ListPipeComponent } from './list-pipe/list-pipe.component';
+import {LogService} from './services/log-service.service';
+import {DataService} from './services/data-service.service';
+import { PhoneListComponent } from './phoneList/phone-list.component';
+
 @NgModule({
   declarations: [
     PowPipe,
@@ -28,14 +32,15 @@ import { ListPipeComponent } from './list-pipe/list-pipe.component';
     MySwichComponent,
     PipeComponent,
     DynamicPipePipe,
-    ListPipeComponent
+    ListPipeComponent,
+    PhoneListComponent
   ],
   imports: [    
     FormsModule,
     BrowserModule,
     FontAwesomeModule 
   ],
-  providers: [],
+  providers: [LogService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

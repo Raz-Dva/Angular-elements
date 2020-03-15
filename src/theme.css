@@ -2129,7 +2129,7 @@ div.tagsinput span.tag a {
 /*  General Layout  */
 
 main {
-    margin-top: 20px;
+    padding-top: 50px;
     background-color: #f0f0f0;
 }
 
@@ -4188,6 +4188,17 @@ header,
 
 .vd_hidden {
     display: none;
+}
+
+.wrap_alert_hidden {
+    position: relative;
+}
+
+.hint_success {
+    position: absolute;
+    min-width: 200px;
+    padding: 15px 15px 0;
+    left: 10px;
 }
 
 
