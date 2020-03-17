@@ -1,4 +1,5 @@
 # Angular4
+This is a project with hints for developing skills and consolidating Angular knowledge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
