@@ -27,13 +27,22 @@
                         <hr>
                     </div>
                     <div class="col-xl-12">
-                        <strong style="margin-right: 10px;" class="control-label">Filter the list</strong>
-                        <input type="checkbox" name="checkCriteria" id="checkCriteria" (change)="onCh($event.target.checked)" checked>
-                        <label for="checkCriteria">Sorted by {{searchCriteria}}</label>
+                        <strong style="margin-right: 10px; vertical-align:super;" class="control-label">Filter the list</strong>
+                        <!-- <input type="checkbox" name="checkCriteria" id="checkCriteria" (change)="onCh($event.target.checked)" checked> -->
+                        <label style="vertical-align:super" for="checkCriteria">Sorted by</label>
+                        <div class="bootstrap-switch bootstrap-switch-blue bootstrap-switch-small bootstrap-switch-criteria">
+                            <div class="bootstrap-switch-container switcher">
+                                <span class="switch-on switch-default">name</span>
+                                <label [ngClass]="{'push-left':pushing}" class="bootstrap-switch-label switch-default" for="check-name">&nbsp;</label>
+                                <span class="switch-off switch-default">age</span>
+                                <input id="check-name" class="mgr-10" type="checkbox" data-rel="switch" data-size="small" data-wrapper-class="blue" style="display:none" (change)="logCh($event.target.checked)">
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="controls col-lg-6">
                                 <input type="text" placeholder="Input name of car" [(ngModel)]="findLetter">
                                 <br>
+
                                 <!-- <button class="btn vd_btn vd_bg-green" (click)="indexed()">Add Item Car</button> -->
                             </div>
                         </div>

@@ -11,7 +11,7 @@ export class PhoneListComponent implements OnInit {
   title:string='Service'
   phoneList ;
   namePhone:string;
-  modelPhone:string;
+  modelPhone:string; 
 
   constructor(private dataservice: DataService, private logService: LogService) {}
 
@@ -19,9 +19,13 @@ export class PhoneListComponent implements OnInit {
     this.phoneList = this.dataservice.getList()
   }
 
-  addPhone(element:HTMLElement){
-    this.dataservice.addItemPhone({name:this.namePhone, model:this.modelPhone});
-    this.logService.hint(element);
+  addPhone(element:[HTMLElement, HTMLElement]){
+    if ( this.namePhone !== '' &&  this.namePhone !== undefined && this.modelPhone !== '' && this.modelPhone !== undefined){
+    this.dataservice.addItemPhone({name:this.namePhone, model:this.modelPhone});  
+    this.logService.hint(element[0]);
+    } else{
+      this.logService.hint(element[1]);
+    }
     this.namePhone = '';
     this.modelPhone = '';
   }

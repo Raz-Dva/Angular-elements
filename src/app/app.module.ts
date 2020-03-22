@@ -12,13 +12,14 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
 import { MyDerective } from './my-derective';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MySwichComponent } from './my-swich/my-swich.component';
-import { PipeComponent } from './pipe/pipe.component';
-import { PowPipe } from './pipe/pow.pipe';
+import { PipeComponent } from './my-pipe/pipe.component';
+import { PowPipe } from './my-pipe/pow.pipe';
 import { DynamicPipePipe } from './dynamic-pipe/dynamic-pipe.pipe';
 import { ListPipeComponent } from './list-pipe/list-pipe.component';
 import {LogService} from './services/log-service.service';
 import {DataService} from './services/data-service.service';
 import { PhoneListComponent } from './phoneList/phone-list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PhoneListComponent } from './phoneList/phone-list.component';
     PipeComponent,
     DynamicPipePipe,
     ListPipeComponent,
-    PhoneListComponent
+    PhoneListComponent,
+    FormComponent
   ],
   imports: [    
     FormsModule,

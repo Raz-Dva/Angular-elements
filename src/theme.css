@@ -95,7 +95,7 @@ Table of Contents:
 /* General */
 
 body {
-    background-color: #cccbcb;
+    background-color: #f0f0f0;
     font-size: 14px;
     font-family: 'Open Sans', 'arial';
     line-height: 23px;
@@ -4194,11 +4194,13 @@ header,
     position: relative;
 }
 
-.hint_success {
+.hint_success,
+.hint_error {
     position: absolute;
     min-width: 200px;
     padding: 15px 15px 0;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -7124,7 +7126,7 @@ body.sticky-menu-active header {
  */
 
 footer {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 footer .vd_bottom {

@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import 'rxjs';
-import  {Observable, of} from 'rxjs';
-import {delay} from 'rxjs/operators';
+// import 'rxjs';
+// import  {Observable, of} from 'rxjs';
+// import {delay} from 'rxjs/operators';
 interface Cars {
   name: string;
   age:number;
@@ -25,6 +25,7 @@ export class ListPipeComponent implements OnInit {
   errorInput:string='';
   searchCriteria:string='name';
   rxObs:string='';
+  pushing:boolean=false;
   listCar: Cars[]=[
     {name:'Ford', age:2011},
     {name:'Audi', age:2011},
@@ -44,11 +45,15 @@ export class ListPipeComponent implements OnInit {
       console.log(this.listCar)
     }   
   }
-  onCh(event){
-    this.searchCriteria = event ? 'name' : 'age';
-  }
+  // onCh(event){
+    
+  // }
 
-  
+  logCh(event){
+    this.pushing = event;
+    this.searchCriteria = event ? 'age' : 'name';
+    console.log(this.searchCriteria );
+  }
     // var resultArr = this.listCar.filter(word=>word['name'] === 'Ford')
     // var num =2335 +'';
     // console.log(num.toLowerCase().indexOf('2'.toLowerCase()) !== -1)

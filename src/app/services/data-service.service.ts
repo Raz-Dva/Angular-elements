@@ -7,7 +7,7 @@ export class DataService {
 
   constructor() { }
 
-  listPhones= [
+  listPhones = [
     {name:'Samsung', model:'sx-132'},
     {name: 'Nokia', model:'nm-g56'}
   ];
