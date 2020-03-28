@@ -12,6 +12,8 @@ export class PhoneListComponent implements OnInit {
   phoneList ;
   namePhone:string;
   modelPhone:string; 
+  successText:string = 'Well done!';
+  errorText:string= 'Incorrect data!';
 
   constructor(private dataservice: DataService, private logService: LogService) {}
 
@@ -22,9 +24,9 @@ export class PhoneListComponent implements OnInit {
   addPhone(element:[HTMLElement, HTMLElement]){
     if ( this.namePhone !== '' &&  this.namePhone !== undefined && this.modelPhone !== '' && this.modelPhone !== undefined){
     this.dataservice.addItemPhone({name:this.namePhone, model:this.modelPhone});  
-    this.logService.hint(element[0]);
+    this.logService.showHint(element[0], this.successText);
     } else{
-      this.logService.hint(element[1]);
+      this.logService.showHint(element[1],this.errorText);
     }
     this.namePhone = '';
     this.modelPhone = '';

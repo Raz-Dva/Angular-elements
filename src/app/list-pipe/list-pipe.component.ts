@@ -42,7 +42,7 @@ export class ListPipeComponent implements OnInit {
     } else{
       this.listCar.push({name:this.itemName, age:this.itemAge});
       this.errorInput = '';
-      console.log(this.listCar)
+      // console.log(this.listCar)
     }   
   }
   // onCh(event){
@@ -52,7 +52,7 @@ export class ListPipeComponent implements OnInit {
   logCh(event){
     this.pushing = event;
     this.searchCriteria = event ? 'age' : 'name';
-    console.log(this.searchCriteria );
+    // console.log(this.searchCriteria );
   }
     // var resultArr = this.listCar.filter(word=>word['name'] === 'Ford')
     // var num =2335 +'';

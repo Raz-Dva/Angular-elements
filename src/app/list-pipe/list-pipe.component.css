@@ -29,8 +29,7 @@
 }
 
 .switcher .bootstrap-switch-label {
-    left: auto;
-    right: 7px;
+    left: 5px;
     z-index: 1;
     margin-left: 0;
     margin-right: 0;
@@ -39,7 +38,7 @@
 }
 
 .switcher .push-left {
-    left: 5px;
+    left: 53%;
 }
 
 .bootstrap-switch-criteria.bootstrap-switch-small .bootstrap-switch-label {

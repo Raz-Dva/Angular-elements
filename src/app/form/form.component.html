@@ -1,46 +1,66 @@
 <div class="panel widget">
-    <div class="panel-heading vd_bg-grey">
+    <div class="panel-heading vd_bg-blue">
         <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-bar-chart-o"></i> </span> {{title}}</h3>
     </div>
     <div class="panel-body-list">
-        <form class="form-horizontal">
-
+        <form class="form-horizontal" (ngSubmit)='submitForm(formUser)' #formUser="ngForm">
             <div class="form-group">
-                <label class="col-sm-4 control-label">Input</label>
-                <div class="col-sm-7 controls">
-                    <input type="text" placeholder="small">
-                    <span class="help-inline">Some hint here</span> </div>
+                <br>
+                <h4 style="text-align: center;">User Data Json</h4>
+                <div style="padding: 5px;">{{user | json}}</div>
             </div>
-
             <div class="form-group">
-                <label class="col-sm-4 control-label">Input</label>
+                <label class="col-sm-4 control-label">NAME</label>
                 <div class="col-sm-7 controls">
-                    <input type="text" placeholder="small">
-                    <span class="help-inline">Some hint here</span> </div>
-            </div>
-
-            <div class="col-sm-7 controls">
-                <select class="width-40">
-                <option>Choice 1</option>
-                <option>Choice 2</option>
-                <option>Choice 3</option>
-                <option>Choice 4</option>
-                <option>Choice 5</option>
-              </select>
-            </div>
-
-
-            <div class="col-sm-7 controls">
-                <div class="vd_radio radio-success">
-                    <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked="">
-                    <label for="optionsRadios3"> 3 </label>
-                    <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option4">
-                    <label for="optionsRadios4"> 4 </label>
+                    <input [(ngModel)]="user.name" type="text" placeholder="name" name="name" required #userName="ngModel">
+                    <!-- <span class="help-inline">Valid -- {{userName.valid}}</span> -->
+                    <span *ngIf="userName.invalid && userName.touched" class="help-inline">Incorect data</span>
                 </div>
             </div>
-            <div class="col-sm-7">
-                <button class="btn vd_btn vd_bg-green vd_white" type="submit"><i class="icon-ok"></i> Submit</button>
-                <br>
+
+            <div class="form-group">
+                <label class="col-sm-4 control-label">PASSWORD</label>
+                <div class="col-sm-7 controls">
+                    <input [(ngModel)]="user.password" type="password" placeholder="password" name="password" required #userPass="ngModel">
+                    <span *ngIf="userPass.invalid && userPass.touched" class="help-inline">Incorect data</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-7 controls">
+                    <input [(ngModel)]="user.email" type="email" placeholder="email" name="email" required email #userEmail="ngModel">
+                    <span *ngIf="userEmail.invalid && userEmail.touched" class="help-inline">Incorect data</span>
+                </div>
+            </div>
+
+            <div class="form-group" style="padding-left: 0" ngModelGroup="formGroup1">
+                <div class="col-sm-7 controls">
+                    <select [(ngModel)]="user.choice" class="" name="choice" required #userSelect="ngModel">
+                    <option>Choice 1</option>
+                    <option>Choice 2</option>
+                    <option>Choice 3</option>
+                    <option>Choice 4</option>
+                    <option>Choice 5</option>
+                </select>
+                    <span *ngIf="userSelect.invalid && userSelect.touched" class="help-inline">Incorect data</span>
+                </div>
+                <div class="col-sm-12 controls">
+                    <div class="vd_radio radio-success">
+                        <input [(ngModel)]="user.optionsRadios2" type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked="checked" required>
+                        <label for="optionsRadios3"> 3 </label>
+                        <input [(ngModel)]="user.optionsRadios2" type="radio" name="optionsRadios2" id="optionsRadios4" value="option4" required>
+                        <label for="optionsRadios4"> 4 </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button class="btn vd_btn vd_bg-green vd_white" type="submit"><i class="icon-ok" ></i> Submit</button>
+                    <!-- [disabled]="formUser.invalid" -->
+                    <br>
+                    <button class="btn vd_btn vd_bg-green vd_white" type="button" (click)="setVal()"><i class="icon-ok" ></i> Set Value</button>
+                    <pre *ngIf="isSubmited">{{formUserData | json}}</pre>
+                </div>
             </div>
         </form>
     </div>

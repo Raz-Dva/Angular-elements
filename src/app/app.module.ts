@@ -20,6 +20,7 @@ import {LogService} from './services/log-service.service';
 import {DataService} from './services/data-service.service';
 import { PhoneListComponent } from './phoneList/phone-list.component';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormComponent } from './form/form.component';
     DynamicPipePipe,
     ListPipeComponent,
     PhoneListComponent,
-    FormComponent
+    FormComponent,
+    ReactiveFormComponent
   ],
   imports: [    
     FormsModule,

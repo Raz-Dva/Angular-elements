@@ -8,8 +8,12 @@ export class LogService {
 
   constructor() { }
 
-  hint(element: HTMLElement){
+  showHint(element: HTMLElement, textHint){
+    $(element).find('.message_text').text(textHint);
     $(element).css('display', 'block');
     setTimeout(()=>$(element).css('display', 'none'), 2000);
+  }
+  hideHint(element:HTMLElement){
+    $(element).css('display', 'none')
   }
 }
