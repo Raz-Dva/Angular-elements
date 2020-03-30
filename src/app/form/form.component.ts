@@ -1,6 +1,6 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {LogService} from '../services/log-service.service';
+
 
 
 
@@ -45,11 +45,11 @@ export class FormComponent implements OnInit {
 
   @ViewChild('formUser') formUser : NgForm;
 
-  constructor(private logService: LogService) { }
+  constructor() { }
   choice:{ id: number, name: string, disabled?: boolean}[] = [
     {id:1, name:'Choice 1', disabled:true},
     {id:1, name:'Choice 2', disabled:true}];
-  title:string='Template forms';
+  title:string='Template Driven';
   defaultChoice=this.choice[0].name; 
   public user:User;
   public formUserData={};
@@ -66,12 +66,11 @@ export class FormComponent implements OnInit {
   submitForm(x:NgForm){
     this.formUserData =this.formUser.value;
     this.isSubmited = true;
-    console.log(x);
-    console.log(x.valid);
+    // console.log(x);
+    // console.log(x.valid);
     this.formUser.reset();
   };
-  setVal(){
-    // console.log(this.formUser);
+  setVal(){  
     // this.formUser.setValue({
     //   name: "Ivan",
     //   password: "zzz",

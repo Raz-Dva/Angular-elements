@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -41,8 +41,9 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
   ],
   imports: [    
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
-    FontAwesomeModule 
+    FontAwesomeModule
   ],
   providers: [LogService, DataService],
   bootstrap: [AppComponent]
