@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,9 @@ import {DataService} from './services/data-service.service';
 import { PhoneListComponent } from './phoneList/phone-list.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ColorsService } from './services/colors.service';
+import { ColorsComponent } from './colors/colors.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,15 +40,18 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ListPipeComponent,
     PhoneListComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ColorsComponent
   ],
-  imports: [    
+  imports: [  
+    HttpModule,
+    HttpClientModule,  
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     FontAwesomeModule
   ],
-  providers: [LogService, DataService],
+  providers: [ColorsService, LogService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

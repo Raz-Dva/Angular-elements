@@ -1,0 +1,67 @@
+<div class="panel widget ">
+    <div class="panel-heading vd_bg-blue">
+        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title | async}}</h3>
+    </div>
+    <div class="panel-body-list pd-15">
+        <div class="panel widget light-widget">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Input new color</h3>
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">Color</label>
+                    <div class="controls">
+                        <input type="text" placeholder="White" name="color" [(ngModel)]="formColor.color">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">Hex</label>
+                    <div class="controls">
+                        <input type="text" placeholder="#FFF" name="hex" [(ngModel)]="formColor.code.hex">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label class="control-label">rgba(255, 255, 255, 1)</label>
+                    <div class="controls controls_rgba" style="display: flex;">
+                        <input type="number" placeholder="255" name="R" [(ngModel)]="RGBA.r">
+                        <input type="number" placeholder="255" name="G" [(ngModel)]="RGBA.g">
+                        <input type="number" placeholder="255" name="B" [(ngModel)]="RGBA.b">
+                        <input type="number" placeholder="1" name="A" [(ngModel)]="RGBA.a">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="addColor()">Add colors</button>
+            <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="getColors()">Get colors</button>
+            <!-- <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="checkData()">Check colors</button> -->
+            <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="changeNameColor()">Change colors</button>
+            <table class="table table-striped table_colors">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Color</th>
+                        <th>RGBA</th>
+                        <th>HEX</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="odd gradeX" *ngFor="let color of dataColors; let ind = index ">
+                        <td>{{ind + 1}}</td>
+                        <td>{{color.color}}</td>
+                        <td>{{color.code.rgba.join()}}</td>
+                        <td>{{color.code.hex}}</td>
+                        <td class="menu-action rounded-btn">
+                            <a data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> </a>
+
+                            <a data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-red vd_red" (click)="removeColor(color)"> <i class="fa fa-times"></i> </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="badge badge-danger badge_error"> {{error}} </span>
+        </div>
+    </div>
+</div>
