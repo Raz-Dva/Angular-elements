@@ -6,6 +6,7 @@
         <div class="form-group col-md">
             <br>
             <h2 class="mgbt-xs-10">Form Type 2</h2>
+            <button type="button" class="btn vd_btn vd_bg-yellow" (click)="notAsk('user')">Not ask about exit</button>
             <h4 _ngcontent-c7="" style="text-align: center;">User Data Json</h4>
             <p>{{reactiveForm.value | json}}</p>
         </div>
@@ -22,6 +23,7 @@
                     <div class="vd_input-wrapper" id="first-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
                         <input [ngClass]="{'vd_bd-red': reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched}" formControlName="firstname" type="text" placeholder="John" class="required" required="" name="firstname" id="firstname">
                     </div>
+                    <span _ngcontent-c1="" class="help-inline">These names already exist: user, user123, userstaff</span>
                 </div>
             </div>
             <div *ngIf="reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>

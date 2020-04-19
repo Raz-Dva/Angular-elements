@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "name": "user123"
+    },
+    {
+      "name": "user"
+    },
+    {
+      "name": "userstaff"
+    }
+  ],
+  "title": [
+    {
+      "value": "Colors"
+    }
+  ],
+  "products": [
+    {
+      "country": "Austria",
+      "available": "yes",
+      "description": "B&O is a Danish company that designs and manufactures audio products, television sets, and telephones. It was founded in 1925 by Peter Bang and Svend Olufsen",
+      "image": "1.jpg",
+      "title": "B&O 5.1",
+      "id": 1
+    },
+    {
+      "country": "France",
+      "available": "no",
+      "description": "B&O is a Danish company that designs and manufactures audio products, television sets, and telephones. It was founded in 1925 by Peter Bang and Svend Olufsen",
+      "image": "2.jpg",
+      "title": "B&O TV",
+      "id": 2
+    },
+    {
+      "country": "Germany",
+      "available": "no",
+      "description": "Market leader in the UK. Roberts produce a wide range of DAB digital radios. Roberts is a consumer electronics company producing DAB, analogue and wi-fi ...",
+      "image": "3.jpg",
+      "title": "Roberts Radio",
+      "id": 3
+    },
+    {
+      "country": "USA",
+      "available": "yes",
+      "description": "Toshiba is a diversified manufacturer and marketer of advanced electronic and electrical products, spanning information & communications equipment and systems",
+      "image": "4.jpg",
+      "title": "Toshiba TV",
+      "id": 4
+    },
+    {
+      "country": "USA",
+      "available": "yes",
+      "description": "B&O is a Danish company that designs and manufactures audio products, television sets, and telephones. It was founded in 1925 by Peter Bang and Svend Olufsen",
+      "image": "5.jpg",
+      "title": "B&O Audio",
+      "id": 5
+    },
+    {
+      "country": "Germany",
+      "available": "yes",
+      "description": "B&O is a Danish company that designs and manufactures audio products, television sets, and telephones. It was founded in 1925 by Peter Bang and Svend Olufsen",
+      "image": "6.jpg",
+      "title": "B&O Remote",
+      "id": 6
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "color": "black",
+      "code": {
+        "rgba": [
+          255,
+          255,
+          255,
+          1
+        ],
+        "hex": "#000"
+      }
+    },
+    {
+      "id": 2,
+      "color": "brown",
+      "code": {
+        "rgba": [
+          23,
+          23,
+          23,
+          1
+        ],
+        "hex": "#555"
+      }
+    },
+    {
+      "id": 3,
+      "color": "red",
+      "code": {
+        "rgba": [
+          255,
+          0,
+          0,
+          1
+        ],
+        "hex": "#FF0"
+      }
+    },
+    {
+      "id": 4,
+      "color": "green",
+      "code": {
+        "rgba": [
+          456,
+          456,
+          456,
+          1
+        ],
+        "hex": "#rrr"
+      }
+    },
+    {
+      "id": 5,
+      "color": "red",
+      "code": {
+        "rgba": [
+          255,
+          0,
+          0,
+          1
+        ],
+        "hex": "#FF0"
+      }
+    },
+    {
+      "id": 6,
+      "color": "blue",
+      "code": {
+        "rgba": [
+          0,
+          0,
+          255,
+          1
+        ],
+        "hex": "#00F"
+      }
+    },
+    {
+      "id": 7,
+      "color": "yellow",
+      "code": {
+        "rgba": [
+          255,
+          255,
+          0,
+          1
+        ],
+        "hex": "#FF0"
+      }
+    }
+  ]
+}

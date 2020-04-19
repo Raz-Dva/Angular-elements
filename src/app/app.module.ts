@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import { NgModelComponent } from './ng-model/ng-model.component';
+import { NgModelComponent } from './product/product-list/product-list.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
@@ -24,6 +24,14 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ColorsService } from './services/colors.service';
 import { ColorsComponent } from './colors/colors.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './/app-routing.module';
+import { TableComandsComponent } from './table-comands/table-comands.component';
+import { ProductComponent } from './product/product-description/product.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ColorsGuardService } from './services/colors-guard.service';
+import { ExitReactFormGuardService } from './services/exit-react-form-guard.service';
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     PhoneListComponent,
     FormComponent,
     ReactiveFormComponent,
-    ColorsComponent
+    ColorsComponent,
+    TableComandsComponent,
+    ProductComponent,
+    NotFoundComponent
   ],
   imports: [  
     HttpModule,
@@ -49,9 +60,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
-  providers: [ColorsService, LogService, DataService],
+  providers: [ColorsService, LogService, DataService, ColorsGuardService, ExitReactFormGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

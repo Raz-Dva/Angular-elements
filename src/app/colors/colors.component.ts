@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ColorsService} from  '../services/colors.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { async } from '@angular/core/testing';
 
 
 export interface Colors { 
@@ -34,13 +35,14 @@ export interface Colors {
   } `]
 })
 export class ColorsComponent implements OnInit {
-  title:Observable<Object>;
+  title;
   formColor: Colors;
-  dataColors :Colors[];
- 
+  dataColors :Colors[]; 
   RGBA: {};
   rgbaColor:number[]=[];
   error:any;
+  private url:string='http://localhost:3000/colors/';
+
 
   constructor(private colorsServ: ColorsService) { }
 
@@ -89,5 +91,6 @@ export class ColorsComponent implements OnInit {
   removeColor(data){
     this.colorsServ.deleteItem(data).subscribe(response=>console.log(response));
     this.getColors();
-  }
+  };
+ 
 }

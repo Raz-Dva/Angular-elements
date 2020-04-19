@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
-import { Observable, Subject, throwError} from 'rxjs';
+import { Observable, throwError} from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Http } from '@angular/http';
 import { Colors } from '../colors/colors.component';
@@ -20,8 +20,10 @@ export class ColorsService {
     .pipe(map(response=>  response), catchError(err => {  
       return throwError(err)}));    
   };
+  
   getTitle(){
-    return this.http.get('http://localhost:3000/title/').pipe(map(response=>response.value));
+    return this.http.get('http://localhost:3000/title/').pipe(map(response=>response), catchError(err => {  
+      return throwError(err)}));
   };  
   addItem(data:Colors): Observable<any>{  
     // console.log(this.url, data)  
@@ -33,5 +35,11 @@ export class ColorsService {
   deleteItem(data: Colors): Observable<any>{
     return this.http.delete(this.url+`${data.id}`).pipe(map(response=>response));
   }
+// ------------------------ test -=--------
+  newGetItems(url): Observable<any>{
+    return this.http.get(url)
+    // .pipe(map(response=>  response), catchError(err => {  
+    //   return throwError(err)}));    
+  };
 
 }

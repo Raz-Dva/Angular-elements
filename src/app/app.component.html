@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <main>
     <div class="container">
+
         <!-- ------------ header --------- -->
         <div class="vd_content-wrapper">
             <div class="vd_panel-header">
@@ -26,99 +27,51 @@
                         </ul>
                     </div>
                 </div>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link3</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <!-- ------------table commands---------------->
-        <div class="vd_content-section clearfix">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel widget">
-                        <div class="panel-heading vd_bg-grey">
-                            <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-dot-circle-o"></i> </span> NPM COMMANDS </h3>
-                        </div>
-                        <div class="panel-body table-responsive">
-                            <div id="data-tables_wrapper" class="dataTables_wrapper form-inline no-footer">
-                                <table class="table table-striped dataTable no-footer">
-                                    <thead>
-                                        <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="data-tables" rowspan="1" colspan="1">NPM</th>
-                                            <th class="sorting_asc" tabindex="0" aria-controls="data-tables" rowspan="1" colspan="1">Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="gradeA" role="row">
-                                            <td class="center">npm install webpack webpack-dev-server typescript -g</td>
-                                            <td class="center">it is recommended to avoid mistakes</td>
-                                        </tr>
-                                        <tr class="gradeA" role="row">
-                                            <td class="center">npm install -g @angular/cli or npm i @angular/cli@6.0.0</td>
-                                            <td class="center">install global angular or need version</td>
-                                        </tr>
-                                        <tr class="gradeA" role="row">
-                                            <td class="center">ng new my-project</td>
-                                            <td class="center">create new project</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">ng serve or npm run start</td>
-                                            <td class="center">run angular server</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">npm uninstall -g angular-cli</td>
-                                            <td class="center">uninstall global angular</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">npm cache clean </td>
-                                            <td class="center">clean cache</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">ng serve --port 5000 </td>
-                                            <td class="center">run server on localhost port 5000</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">npm install --save bootstrap jquery</td>
-                                            <td class="center">install bootstrap and jquery after need to register the paths in the file angular.json </td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">ng generate component my-component or ng g c my-component </td>
-                                            <td class="center">create angular component</td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center"></td>
-                                            <td class="center"></td>
-                                        </tr>
-                                        <tr class="gradeA " role="row">
-                                            <td class="center">ng --version</td>
-                                            <td class="center">current vertion</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
-
-
         </div>
-        <!-- ----------- main panel-------------------->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">npm commands</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/reactform" routerLinkActive="active">React Form*</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/powPipe" routerLinkActive="active">
+                Pow Pipe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/colors" routerLinkActive="active">Colors**</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/product" routerLinkActive="active">Products</a>
+            </li>
+            <li><button type="button" class="btn vd_bg-red vd_white" (click)="linkFormComponent()">FormComponent</button></li>
+        </ul>
+        <p>
+            <span _ngcontent-c1="" class="help-inline">* - use  Guard canDeactivate</span>
+        </p>
+        <p>
+            <span _ngcontent-c1="" class="help-inline">** - use Guard CanActivate </span>
+        </p>
+
+
+        <!-- - table commands ---->
+        <hr>
+        <router-outlet></router-outlet>
+        <br>
+
+
+        <!-- ----------- main panel------>
         <div class="row">
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <app-ng-model></app-ng-model>
-            </div>
+            </div> -->
+            <!-- <div class="col-md-12">
+                <app-table-comands></app-table-comands>
+            </div> -->
+            <!-- 
             <div class="col-md-6">
                 <app-ng-if></app-ng-if>
             </div>
@@ -129,19 +82,6 @@
                 <app-ng-class></app-ng-class>
             </div>
             <div class="col-md-6">
-                <!-- <div class="panel widget ">                    
-                    <div class="panel-heading vd_bg-blue">
-                        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>                
-                    </div>
-                    <div class="panel-body-list pd-15">
-                        <div class="input-group mgbt-xs-15">
-                            <div class="panel widget light-widget">
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="panel widget">
                     <div class="panel-heading vd_bg-blue">
                         <h3 class="panel-title"> <span class="menu-icon">
@@ -161,17 +101,14 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div class="col-md-6">
                 <app-pipe></app-pipe>
             </div>
-
             <div class="col-md-6">
                 <app-phone-list></app-phone-list>
             </div>
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <app-list-pipe></app-list-pipe>
             </div>
             <div class="col-md-6">
@@ -182,9 +119,22 @@
             </div>
             <div class="col-md-6">
                 <app-colors></app-colors>
-            </div>
-
+            </div> -->
         </div>
+        <!----- temlate panel ----   -->
+        <!-- <div class="panel widget ">                    
+                    <div class="panel-heading vd_bg-blue">
+                        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>                
+                    </div>
+                    <div class="panel-body-list pd-15">
+                        <div class="input-group mgbt-xs-15">
+                            <div class="panel widget light-widget">
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
     </div>
 </main>
 <footer class="footer-1" id="footer">
