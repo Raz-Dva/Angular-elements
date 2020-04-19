@@ -1,4 +1,4 @@
-About.
+# About
 This is my test app. In this app I have studied the theory on the following questions:
 - Introduction and installation
 - Syntax
