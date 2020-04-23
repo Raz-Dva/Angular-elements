@@ -1,8 +1,8 @@
-<h3><strong>ID:</strong> {{id}}</h3>
+<h3><strong>ID:</strong>{{id}}</h3>
 <h3><strong>Title:</strong> {{title}}</h3>
 <h3><strong>Available:</strong> {{available}}</h3>
 <h3><strong>Country:</strong> {{country}}</h3>
-<h3><strong>Hash </strong>{{hash | async}}</h3>
+<h3 headColor><strong>Hash </strong>{{hash | async}}</h3>
 
 <a [routerLink]="['/product', 2, 'B&O TV']" [queryParams]="{'available':'no', 'country':'France'}" [fragment]="'pic'">B&O TV--2</a>
 <br>

@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import { NgModelComponent } from './product/product-list/product-list.component';
+
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
@@ -24,20 +24,23 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ColorsService } from './services/colors.service';
 import { ColorsComponent } from './colors/colors.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductModule } from './product/product.module/product.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { TableComandsComponent } from './table-comands/table-comands.component';
-import { ProductComponent } from './product/product-description/product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ColorsGuardService } from './services/colors-guard.service';
 import { ExitReactFormGuardService } from './services/exit-react-form-guard.service';
+import { SharedModule } from './hsared/shared.module';
+import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { AsyncLoadModule } from './async-load/async-load.module';
+
 
 
 
 @NgModule({
   declarations: [
-    PowPipe,
     AppComponent,
-    NgModelComponent,
+    PowPipe,    
     NgIfComponent,
     NgClassComponent,
     NgStyleComponent,
@@ -51,7 +54,6 @@ import { ExitReactFormGuardService } from './services/exit-react-form-guard.serv
     ReactiveFormComponent,
     ColorsComponent,
     TableComandsComponent,
-    ProductComponent,
     NotFoundComponent
   ],
   imports: [  
@@ -61,7 +63,10 @@ import { ExitReactFormGuardService } from './services/exit-react-form-guard.serv
     ReactiveFormsModule,
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    ProductModule,
+    SharedModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [ColorsService, LogService, DataService, ColorsGuardService, ExitReactFormGuardService],
   bootstrap: [AppComponent]

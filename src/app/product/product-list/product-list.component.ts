@@ -6,7 +6,7 @@ import {ProductsService} from '../../services/products.service'
   templateUrl: './product-list.component.html',
   styles:['.nav_products >li > a.active{background-color: #C7C7C7;} a{text-decoration: underline;}']
 })
-export class NgModelComponent implements OnInit {
+export class ProductList implements OnInit {
   title:string = 'Products';
   products;
 
