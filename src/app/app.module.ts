@@ -24,19 +24,15 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ColorsService } from './services/colors.service';
 import { ColorsComponent } from './colors/colors.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductModule } from './product/product.module/product.module';
+import { ProductModule } from './product/product.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { TableComandsComponent } from './table-comands/table-comands.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ColorsGuardService } from './services/colors-guard.service';
 import { ExitReactFormGuardService } from './services/exit-react-form-guard.service';
-import { SharedModule } from './hsared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AsyncLoadModule } from './async-load/async-load.module';
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

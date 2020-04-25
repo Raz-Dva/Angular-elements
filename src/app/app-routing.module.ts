@@ -12,10 +12,13 @@ import { ExitReactFormGuardService } from './services/exit-react-form-guard.serv
 
 const appRoutes: Routes=[
   {path: '', component: TableComandsComponent},  
+  // {path: 'Syntax', component: TableComandsComponent},  
+  {path: '', component: TableComandsComponent},  
+
   {path: 'colors', component: ColorsComponent, canActivate:[ColorsGuardService]},
   {path: 'reactform', component: ReactiveFormComponent,   canDeactivate: [ExitReactFormGuardService]},
   {path: 'powPipe', component: PipeComponent},
-  {path:'lazyRout', loadChildren:'./async-load/async-load.module#AsyncLoadModule'} , 
+  {path:'lazyRoute', loadChildren:'./async-load/async-load.module#AsyncLoadModule'} , 
   // canLoad:[] we can add guard
   {path: 'not-found', component: NotFoundComponent},
   {path: '**', redirectTo:'/not-found'}
