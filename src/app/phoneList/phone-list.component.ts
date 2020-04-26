@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../services/data-service.service';
 import {LogService} from '../services/log-service.service';
+import {faBoxOpen} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-phone-list',
@@ -8,7 +10,8 @@ import {LogService} from '../services/log-service.service';
 })
 
 export class PhoneListComponent implements OnInit {
-  title:string='Service'
+  title:string='Services';
+  faBoxOpen=faBoxOpen;
   phoneList ;
   namePhone:string;
   modelPhone:string; 

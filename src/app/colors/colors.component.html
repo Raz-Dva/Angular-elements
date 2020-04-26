@@ -49,15 +49,33 @@
                 </thead>
                 <tbody>
                     <tr class="odd gradeX" *ngFor="let color of dataColors; let ind = index ">
-                        <td>{{ind + 1}}</td>
+                        <td>{{color.id}}</td>
                         <td>{{color.color}}</td>
                         <td>{{color.code.rgba.join()}}</td>
                         <td>{{color.code.hex}}</td>
                         <td class="menu-action rounded-btn">
-                            <a data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-yellow vd_yellow"> <i class="fa fa-pencil"></i> </a>
+                            <a data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-yellow vd_yellow" (click)="changeDataColor(color.id)"> <i class="fa fa-pencil"></i> </a>
 
                             <a data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_bd-red vd_red" (click)="removeColor(color)"> <i class="fa fa-times"></i> </a>
                         </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="text" style="max-width: 150px;" name="chColor" [(ngModel)]="changeColor.color">
+                        </td>
+                        <td>
+                            <div class="controls controls_rgba" style="display: flex;">
+                                <input type="number" name="chR" [(ngModel)]="chRGBA.r">
+                                <input type="number" name="chG" [(ngModel)]="chRGBA.g">
+                                <input type="number" name="chB" [(ngModel)]="chRGBA.b">
+                                <input type="number" name="chA" [(ngModel)]="chRGBA.a">
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" style="max-width: 150px;" name="chHex" [(ngModel)]="changeColor.code.hex">
+                        </td>
+                        <td> <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="getData()">Get colors</button></td>
                     </tr>
                 </tbody>
             </table>

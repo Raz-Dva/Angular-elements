@@ -1,25 +1,14 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-
-
-
 export class User{
   constructor(public name: string, 
               public password: string, 
               public choice: string,
               public email: string,
-              public optionsRadios2:boolean)
+              public optionsRadios2:string)
   { }
 }
-// export class Choices {
-//   constructor(
-//     public id: number,
-//   public name: string,
-//   public  disabled?: boolean
-//   ){}
-  
-// }
 
 @Component({
   selector: 'app-form',
@@ -59,27 +48,17 @@ export class FormComponent implements OnInit {
     this.user={
       name: '',
       password: '',
-      choice: 'Choice 1',
       email:'',
-      optionsRadios2:true}
+      choice: 'Choice 1',
+      optionsRadios2:'option3'}
   };
   submitForm(x:NgForm){
     this.formUserData =this.formUser.value;
     this.isSubmited = true;
-    // console.log(x);
-    // console.log(x.valid);
+    var afterReset = 'option3';
     this.formUser.reset();
-  };
-  setVal(){  
-    // this.formUser.setValue({
-    //   name: "Ivan",
-    //   password: "zzz",
-    //   email: "as@asd.us",
-    //   formGroup1: {
-    //     choice: 'Choice 5',
-    //     optionsRadios2: false
-    //   }
-    // })
+  };    
+  setVal(){
     this.formUser.form.patchValue({
       formGroup1:{ choice: 'Choice 5'}
     })

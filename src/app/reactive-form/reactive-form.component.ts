@@ -40,16 +40,18 @@ export class ReactiveFormComponent implements OnInit, ComponentCanDeactivate  {
   onSubmit(){
     this.isSubmited=true;
     this.preForm = this.reactiveForm.value;
-     this.reactiveForm.reset();
+    this.reactiveForm.reset();
   }
   // --------------- Password Validator -----------
 
   validatorPassword(control: FormControl) {
-    if(control.value.length < this.charsCount ){
-      return{
-        'lengthError' : true
-      };
-    }
+    if(control.value){
+      if(control.value.length < this.charsCount ){
+        return{
+          'lengthError' : true
+        };
+      }
+    }    
     return null
   };
   // --------------- phone number Validator -----------

@@ -1,6 +1,8 @@
 <div class="panel widget ">
     <div class="panel-heading vd_bg-blue">
-        <h3 class="panel-title"> <span class="menu-icon"> <i class=""></i> </span> {{title}}</h3>
+        <h3 class="panel-title"> <span class="menu-icon">
+            <fa-icon [icon]="faBoxOpen"></fa-icon>
+            </span> {{title}}</h3>
     </div>
     <div class="panel-body-list pd-15">
         <div class="input-group mgbt-xs-15">
@@ -9,7 +11,6 @@
                     <div class="alert alert-success vd_hidden hint_success" #hint_success>
                         <span class="vd_alert-icon"><i class="fa fa-check-circle vd_green"></i></span><strong class="message_text"></strong>
                     </div>
-
                     <div class="alert alert-danger vd_hidden hint_error" #hint_error> <span class="vd_alert-icon "><i class="fa fa-exclamation-circle vd_red "></i></span><strong class="message_text"></strong>
                     </div>
                 </div>

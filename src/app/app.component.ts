@@ -1,8 +1,5 @@
 import { Component, Pipe, Directive } from '@angular/core';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
-import {  library } from '@fortawesome/fontawesome-svg-core';
 import { Router, ActivatedRoute } from '@angular/router';
-library.add(faBookmark);
 
 @Component({
   selector: 'app-root',
@@ -11,7 +8,7 @@ library.add(faBookmark);
 })
 export class AppComponent {
   title = 'App Angular Components';
-  faBookmark = faBookmark;
+  
 
   constructor(private router: Router, private route : ActivatedRoute){};
 

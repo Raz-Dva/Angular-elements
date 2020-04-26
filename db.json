@@ -120,42 +120,68 @@
     },
     {
       "id": 5,
-      "color": "red",
+      "color": "brown",
       "code": {
         "rgba": [
-          255,
-          0,
-          0,
+          23,
+          23,
+          23,
           1
         ],
-        "hex": "#FF0"
+        "hex": "#555"
       }
     },
     {
+      "code": {
+        "rgba": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "hex": ""
+      },
       "id": 6,
-      "color": "blue",
-      "code": {
-        "rgba": [
-          0,
-          0,
-          255,
-          1
-        ],
-        "hex": "#00F"
-      }
+      "color": ""
     },
     {
-      "id": 7,
-      "color": "yellow",
       "code": {
         "rgba": [
-          255,
-          255,
-          0,
-          1
+          null,
+          null,
+          null,
+          null
         ],
-        "hex": "#FF0"
-      }
+        "hex": ""
+      },
+      "id": 7,
+      "color": ""
+    },
+    {
+      "code": {
+        "rgba": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "hex": "rwe"
+      },
+      "id": 8,
+      "color": "rew"
+    },
+    {
+      "code": {
+        "rgba": [
+          23,
+          23,
+          23,
+          23
+        ],
+        "hex": "wwww"
+      },
+      "id": 9,
+      "color": "wwww"
     }
   ]
 }

@@ -26,15 +26,18 @@ export class ColorsService {
       return throwError(err)}));
   };  
   addItem(data:Colors): Observable<any>{  
-    // console.log(this.url, data)  
     return this.http.post(this.url, data).pipe(map(response=>response));
   };
+
   changeItem(data:Colors, Color): Observable<any>{
-    return this.http.put(this.url+`${data}`, Color).pipe(map(response=>response));
+    console.log(this.url+data)
+    return this.http.put(this.url + data, Color).pipe(map(response=>response));
   };
+
   deleteItem(data: Colors): Observable<any>{
     return this.http.delete(this.url+`${data.id}`).pipe(map(response=>response));
   }
+
 // ------------------------ test -=--------
   newGetItems(url): Observable<any>{
     return this.http.get(url)

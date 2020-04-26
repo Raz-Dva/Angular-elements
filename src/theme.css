@@ -1204,6 +1204,7 @@ table tbody .row-danger td {
 
 .panel .panel-title {
     color: #ffffff;
+    margin: 10px 0;
 }
 
 .panel .panel-title a:hover,

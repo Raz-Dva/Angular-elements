@@ -9,7 +9,5 @@ export class MyDerective {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { 
 
     this.renderer.setStyle(this.elementRef.nativeElement, "font-weight", "bold");
-
   }
-
 }

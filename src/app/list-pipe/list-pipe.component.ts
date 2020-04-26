@@ -1,8 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
-// import 'rxjs';
-// import  {Observable, of} from 'rxjs';
-// import {delay} from 'rxjs/operators';
+import {faPuzzlePiece} from '@fortawesome/free-solid-svg-icons';
+
 interface Cars {
   name: string;
   age:number;
@@ -13,7 +11,10 @@ interface Cars {
   templateUrl: './list-pipe.component.html',
   styleUrls: ['./list-pipe.component.css']
 })
-export class ListPipeComponent implements OnInit {
+
+export class ListPipeComponent implements 
+OnInit {
+faPuzzlePiece=faPuzzlePiece;
   title='Pipe';
   newArr=[];
 
@@ -42,24 +43,11 @@ export class ListPipeComponent implements OnInit {
     } else{
       this.listCar.push({name:this.itemName, age:this.itemAge});
       this.errorInput = '';
-      // console.log(this.listCar)
     }   
   }
-  // onCh(event){
-    
-  // }
-
   logCh(event){
     this.pushing = event;
     this.searchCriteria = event ? 'age' : 'name';
-    // console.log(this.searchCriteria );
   }
-    // var resultArr = this.listCar.filter(word=>word['name'] === 'Ford')
-    // var num =2335 +'';
-    // console.log(num.toLowerCase().indexOf('2'.toLowerCase()) !== -1)
-    // indexed(){
-    //   of('some text').pipe(delay(3000)).subscribe(x=>this.rxObs = x);
-    // }
-   
 
 }

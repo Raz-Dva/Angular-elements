@@ -1,6 +1,8 @@
 <div class="panel widget ">
     <div class="panel-heading vd_bg-blue">
-        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-graph"></i> </span> {{title}}</h3>
+        <h3 class="panel-title"> <span class="menu-icon">
+            <fa-icon [icon]="faPuzzlePiece"></fa-icon>
+            </span> {{title}}</h3>
     </div>
     <div class="panel-body-list pd-15">
         <div class="input-group mgbt-xs-15">
@@ -28,7 +30,6 @@
                     </div>
                     <div class="col-xl-12">
                         <strong style="margin-right: 10px; vertical-align:super;" class="control-label">Filter the list</strong>
-                        <!-- <input type="checkbox" name="checkCriteria" id="checkCriteria" (change)="onCh($event.target.checked)" checked> -->
                         <label style="vertical-align:super" for="checkCriteria">Sorted by</label>
                         <div class="bootstrap-switch bootstrap-switch-blue bootstrap-switch-small bootstrap-switch-criteria">
                             <div class="bootstrap-switch-container switcher">
@@ -40,7 +41,7 @@
                         </div>
                         <div class="row">
                             <div class="controls col-lg-6">
-                                <input type="text" placeholder="Input name of car" [(ngModel)]="findLetter">
+                                <input type="text" placeholder="Input name or age of car" [(ngModel)]="findLetter">
                                 <br>
 
                                 <!-- <button class="btn vd_btn vd_bg-green" (click)="indexed()">Add Item Car</button> -->
