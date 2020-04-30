@@ -29,8 +29,7 @@ export class ColorsService {
     return this.http.post(this.url, data).pipe(map(response=>response));
   };
 
-  changeItem(data:Colors, Color): Observable<any>{
-    console.log(this.url+data)
+  changeItem(data, Color:Colors): Observable<any>{
     return this.http.put(this.url + data, Color).pipe(map(response=>response));
   };
 

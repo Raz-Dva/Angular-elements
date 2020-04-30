@@ -15,7 +15,6 @@
                 <label class="col-sm-4 control-label">NAME</label>
                 <div class="col-sm-7 controls">
                     <input [(ngModel)]="user.name" type="text" placeholder="name" name="name" required #userName="ngModel">
-                    <!-- <span class="help-inline">Valid -- {{userName.valid}}</span> -->
                     <span *ngIf="userName.invalid && userName.touched" class="help-inline">Incorect data</span>
                 </div>
             </div>

@@ -12,23 +12,7 @@ export class User{
 
 @Component({
   selector: 'app-form',
-  templateUrl: './form.component.html',
-  styles: [`
-  select.ng-pristine.ng-invalid.ng-touched,
-    select.ng-invalid.ng-touched.ng-dirty
-  input.ng-pristine.ng-invalid.ng-touched:focus,
-  input.ng-invalid.ng-touched.ng-dirty:focus,
-  input.ng-pristine.ng-invalid.ng-touched,
-    input.ng-invalid.ng-touched.ng-dirty{
-      border:2px solid #ff7373;
-      border-radius: 3px;
-      box-shadow: 0px 0px 4px  1px rgb(255, 176, 176);
-      outline:transparent
-    }
-    .form-horizontal .help-inline{
-      color:#ff7373;
-    }
-  `]
+  templateUrl: './form.component.html'
 })
 export class FormComponent implements OnInit {
 
@@ -40,8 +24,8 @@ export class FormComponent implements OnInit {
     {id:1, name:'Choice 2', disabled:true}];
   title:string='Template Driven';
   defaultChoice=this.choice[0].name; 
-  public user:User;
-  public formUserData={};
+  user:User;
+  formUserData={};
   isSubmited=false;
 
   ngOnInit() {
@@ -55,12 +39,11 @@ export class FormComponent implements OnInit {
   submitForm(x:NgForm){
     this.formUserData =this.formUser.value;
     this.isSubmited = true;
-    var afterReset = 'option3';
     this.formUser.reset();
   };    
   setVal(){
     this.formUser.form.patchValue({
-      formGroup1:{ choice: 'Choice 5'}
+    formGroup1:{ choice: 'Choice 5'}
     })
   }
 }

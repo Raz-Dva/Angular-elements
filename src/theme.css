@@ -1146,7 +1146,119 @@ table tbody .row-danger td {
 
 .table .rounded-btn .menu-icon {
     border-radius: 20px;
+    /* ---------my style---------- */
+    position: relative;
+    width: 30px;
+    height: 30px;
 }
+
+.table .rounded-btn .menu-icon>.fa {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 28px;
+}
+
+.change_color_wrap {
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.change_color_form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_el {
+    display: none;
+}
+
+#color-table {
+    position: relative;
+}
+
+.background_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b5b5b5;
+    z-index: 1;
+    opacity: .5;
+}
+
+.color_wiev {
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+}
+
+select.ng-pristine.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched.ng-dirty input.ng-pristine.ng-invalid.ng-touched:focus,
+input.ng-invalid.ng-touched.ng-dirty:focus,
+input.ng-pristine.ng-invalid.ng-touched,
+input.ng-invalid.ng-touched.ng-dirty {
+    border: 2px solid #ff7373;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px 1px rgb(255, 176, 176);
+    outline: transparent
+}
+
+.change_color_wrap .help-inline,
+.form-horizontal .help-inline {
+    color: #ff7373;
+}
+
+
+/* ------- valid form ----- */
+
+select.ng-pristine.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched.ng-dirty input.ng-pristine.ng-invalid.ng-touched:focus,
+input.ng-invalid.ng-touched.ng-dirty:focus,
+input.ng-pristine.ng-invalid.ng-touched,
+input.ng-invalid.ng-touched.ng-dirty {
+    border: 2px solid #ff7373;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px 1px rgb(255, 176, 176);
+    outline: transparent
+}
+
+.form-horizontal .help-inline {
+    color: #ff7373;
+}
+
+.controls_rgba input {
+    margin-right: 1px;
+    width: 55px;
+}
+
+button,
+label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.table_colors>tbody>tr>td,
+.table_colors>tfoot>tr>td,
+.table_colors>thead>tr>th {
+    padding: 7px !important;
+}
+
+.badge_error {
+    font-size: 14px;
+    padding: 0;
+    white-space: normal;
+}
+
+
+/* ---------my style end---------- */
 
 .table-condensed .menu-action {
     padding-top: 2px !important;

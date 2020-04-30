@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {ColorsService} from  '../services/colors.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { async } from '@angular/core/testing';
 
@@ -25,45 +25,42 @@ class TemplateObj implements Colors {
       hex
     };
     id;
-  }     
-  // color:'';
-  // code:{
-  //   rgba: null;
-  //   hex: '';
-  // };
-  // id:null
+  } ;
 };
+
+class ObjRGBA{
+r; g; b; a;
+  constructor(val){
+    this.r=val;
+    this.g=val;
+    this.b=val;
+    this.a=val;
+  }
+};
+
 
 @Component({
   selector: 'app-colors',
-  templateUrl: './colors.component.html',
-  styles: [`
-  .controls_rgba input{
-    margin-right:1px;
-    max-width:55px;}
-  button, label{
-    margin-top:5px;
-    margin-bottom:5px;
-  }
-  .table_colors>tbody>tr>td, .table_colors>tfoot>tr>td, .table_colors>thead>tr>th{
-    padding:7px !important;
-  }
-  .badge_error{
-    font-size:14px;
-    padding:0;
-    white-space: normal;
-  } `]
+  templateUrl: './colors.component.html'
+  
 })
 export class ColorsComponent implements OnInit {
+
+  @ViewChild('changeForm') changeForm : NgForm;
+
+  
   title:Observable<Object>;
   dataColors :Colors[]; 
   chRGBA:{};
   RGBA: {};
-  error:any;
+  requestError:any;
   formColor:Colors;
   changeColor:Colors;
+  showing:boolean=true;
+  idElement:number;
+  positionTop: string;
+  nameColor: any;
   
-  private url:string='http://localhost:3000/colors/';
 
 
   constructor(private colorsServ: ColorsService) { }
@@ -72,14 +69,8 @@ export class ColorsComponent implements OnInit {
     this.getColors();
     this.formColor=new TemplateObj('', [], '', null);
     this.changeColor=new TemplateObj('', [], '', null);
-
-    // this.clearRgba(this.chRGBA)
-    // this.clearRgba(this.RGBA)
-
-    this.chRGBA={r:null, g:null, b:null, a:null };
-    this.RGBA={ r:null, g:null, b:null, a:null };
-
-
+    this.chRGBA=new ObjRGBA(null);
+    this.RGBA=new ObjRGBA(null);
     this.title = this.colorsServ.getTitle();
     };
 
@@ -87,20 +78,13 @@ export class ColorsComponent implements OnInit {
     this.colorsServ.getItems().subscribe(
       response => { this.dataColors = response},
       error => {
-        console.log(error.message);
-        this.error = 'ERROR: ' + error.message; });
+        this.requestError = 'ERROR: ' + error.message; });
   };
   addColor(){  
     this.createRgbaArr(this.RGBA, this.formColor);  
     this.colorsServ.addItem(this.formColor).subscribe(response=>this.dataColors.push(response));
     this.resetForm(this.formColor, this.RGBA);
-
-    // this.formColor.color = '';
-    // this.formColor.code.rgba = [];
-    // this.formColor.code.hex = '';
-    // this.RGBA={r:null, g:null, b:null, a:null};
     this.getColors();
-
   }; 
 
   removeColor(data){
@@ -109,22 +93,25 @@ export class ColorsComponent implements OnInit {
       return response;
     });
   };
-  
-
-  changeDataColor(id){
-    this.createRgbaArr(this.chRGBA, this.changeColor);
+  closeChangeForm(){
+    this.showing=true;
+  }
+  openChangeForm(id, ev){
+    this.showing=false;
+    var obj = ev.target.closest('.gradeX');
+    var posX = obj.offsetTop; 
+    this.positionTop = (posX + obj.offsetHeight) + 'px';
     this.changeColor.id=id;
-    console.log(this.changeColor);
-    this.colorsServ.changeItem(id, this.changeColor).subscribe(response=>{
+  };
+  changeDataColor(){
+
+    
+    this.createRgbaArr(this.chRGBA, this.changeColor);
+    this.colorsServ.changeItem(this.changeColor.id, this.changeColor).subscribe(response=>{
       this.resetForm(this.changeColor, this.chRGBA);
-      // this.changeColor.color = '';
-      // this.changeColor.code.rgba = [];
-      // this.changeColor.code.hex = '';
-      // this.chRGBA={r:null, g:null, b:null, a:null};
-    this.getColors();
+      this.getColors();
+      this.showing=true;
     return response;
-      // this.dataColors[id] = response;
-        // console.log(response);
     })       
   };
 
@@ -138,8 +125,8 @@ export class ColorsComponent implements OnInit {
     form.color = '';
     form.code.rgba = [];
     form.code.hex = '';
-    // this.clearRgba(rgba);
-    rgba={r:null, g:null, b:null, a:null};
+    this.clearRgba(rgba);
+    form.id=null;
   };
 
   clearRgba(rgba){
@@ -154,4 +141,12 @@ export class ColorsComponent implements OnInit {
     this.createRgbaArr(this.chRGBA, this.changeColor);
     console.log(this.changeColor)
   };
+  validDataColor(x, y, z){
+      // console.log(x.value);
+
+if(x.value || y.value || z.value == 100)
+    console.log(x);
+
+
+  }
 }
