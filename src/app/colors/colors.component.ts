@@ -3,7 +3,7 @@ import {ColorsService} from  '../services/colors.service';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { async } from '@angular/core/testing';
-
+import {faAdjust} from '@fortawesome/free-solid-svg-icons';
 
 export interface Colors { 
   color:string;
@@ -48,7 +48,7 @@ export class ColorsComponent implements OnInit {
 
   @ViewChild('changeForm') changeForm : NgForm;
 
-  
+  faAdjust=faAdjust;
   title:Observable<Object>;
   dataColors :Colors[]; 
   chRGBA:{};
@@ -56,7 +56,8 @@ export class ColorsComponent implements OnInit {
   requestError:any;
   formColor:Colors;
   changeColor:Colors;
-  showing:boolean=true;
+  // showing:boolean=true;
+  isVisible=false;
   idElement:number;
   positionTop: string;
   nameColor: any;
@@ -80,10 +81,10 @@ export class ColorsComponent implements OnInit {
       error => {
         this.requestError = 'ERROR: ' + error.message; });
   };
-  addColor(){  
+  addColor(form){  
     this.createRgbaArr(this.RGBA, this.formColor);  
     this.colorsServ.addItem(this.formColor).subscribe(response=>this.dataColors.push(response));
-    this.resetForm(this.formColor, this.RGBA);
+    form.reset();
     this.getColors();
   }; 
 
@@ -93,24 +94,21 @@ export class ColorsComponent implements OnInit {
       return response;
     });
   };
-  closeChangeForm(){
-    this.showing=true;
-  }
+  
   openChangeForm(id, ev){
-    this.showing=false;
+     this.isVisible=true;
     var obj = ev.target.closest('.gradeX');
     var posX = obj.offsetTop; 
     this.positionTop = (posX + obj.offsetHeight) + 'px';
     this.changeColor.id=id;
   };
-  changeDataColor(){
-
-    
+  changeDataColor(){    
     this.createRgbaArr(this.chRGBA, this.changeColor);
     this.colorsServ.changeItem(this.changeColor.id, this.changeColor).subscribe(response=>{
       this.resetForm(this.changeColor, this.chRGBA);
       this.getColors();
-      this.showing=true;
+      // this.showing=true;
+    this.isVisible=false;
     return response;
     })       
   };
@@ -141,12 +139,5 @@ export class ColorsComponent implements OnInit {
     this.createRgbaArr(this.chRGBA, this.changeColor);
     console.log(this.changeColor)
   };
-  validDataColor(x, y, z){
-      // console.log(x.value);
-
-if(x.value || y.value || z.value == 100)
-    console.log(x);
-
-
-  }
+  
 }

@@ -1,0 +1,17 @@
+<div class="wrap_component">
+    <div class="wrap_input" #wrap style=" overflow: hidden;">
+        <div class="panel widget">
+            <div class="panel-heading vd_bg-blue">
+                <h3 class="panel-title"> <span class="menu-icon">
+                <fa-icon [icon]="faArrowsAltH"></fa-icon>
+                </span> {{title}}</h3>
+            </div>
+            <div class="panel-body-list">
+                <app-form-add-item (onAddCar)="updateCarsList($event)"></app-form-add-item>
+                <hr>
+                <h1>app cars</h1>
+                <app-car *ngFor=" let car of cars " [carItem]="car"></app-car>
+            </div>
+        </div>
+    </div>
+</div>

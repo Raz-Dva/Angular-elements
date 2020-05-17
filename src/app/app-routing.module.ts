@@ -11,20 +11,24 @@ import { ExitReactFormGuardService } from './services/exit-react-form-guard.serv
 import { PhoneListComponent } from './phoneList/phone-list.component';
 import { ListPipeComponent } from './list-pipe/list-pipe.component';
 import { FormComponent } from './form/form.component';
+import { CarsComponent } from './input-test/cars/cars.component';
+import { TestComponentComponent } from './test-component/test-component.component';
 
 const appRoutes: Routes=[
-  {path: '', component: TableComandsComponent},
-  {path: 'services', component: PhoneListComponent},
-  {path: 'pipe', component: ListPipeComponent},
-  {path: 'colors', component: ColorsComponent
+  {path: '', component: TableComandsComponent, data: { animation: 'slide1' }},
+  {path: 'test', component: TestComponentComponent, data: { animation: 'slide2' }},
+  {path: 'decorators', component: CarsComponent, data: { animation: 'slide3' }},
+  {path: 'services', component: PhoneListComponent, data: { animation: 'slide4' }},
+  {path: 'pipe', component: ListPipeComponent, data: { animation: 'slide5' }},
+  {path: 'colors', component: ColorsComponent, data: { animation: 'slide6' }
   // , canActivate:[ColorsGuardService]
 },
-  {path: 'drivenform', component: FormComponent},
-  {path: 'reactform', component: ReactiveFormComponent,   canDeactivate: [ExitReactFormGuardService]},
-  {path:'lazyRoute', loadChildren:'./async-load/async-load.module#AsyncLoadModule'} , 
-  {path: 'services', component: PhoneListComponent},  
+  {path: 'drivenform', component: FormComponent, data: { animation: 'slide7' }},
+  {path: 'reactform', component: ReactiveFormComponent,   canDeactivate: [ExitReactFormGuardService],data: { animation: 'slide8' }},
+  {path:'lazyRoute', loadChildren:'./async-load/async-load.module#AsyncLoadModule', data: { animation: 'slide9' }} , 
+  {path: 'services', component: PhoneListComponent, data: { animation: 'slide9' }},  
   // canLoad:[] we can add guard  
-  {path: 'not-found', component: NotFoundComponent},
+  {path: 'not-found', component: NotFoundComponent, data: { animation: 'slide10' }},
   {path: '**', redirectTo:'/not-found'}
 ];
 

@@ -23,7 +23,7 @@
                     <div class="vd_input-wrapper" id="first-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
                         <input [ngClass]="{'vd_bd-red': reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched}" formControlName="firstname" type="text" placeholder="John" class="required" required="" name="firstname" id="firstname">
                     </div>
-                    <span _ngcontent-c1="" class="help-inline">These names already exist: user, user123, userstaff</span>
+                    <p class="vd_soft-grey">These names already exist: user, user123, userstaff</p>
                 </div>
             </div>
             <div *ngIf="reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>
@@ -51,7 +51,7 @@
                         <input formControlName="numberPhone" [ngClass]="{'vd_bd-red': reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched}" type="text" placeholder="Number Phone" class="required" required="" name="numberPhone">
 
                     </div>
-                    <span class="help-inline">+38(044)777-77-77</span>
+                    <span class="vd_soft-grey">+38(044)777-77-77</span>
                 </div>
             </div>
             <div *ngIf="reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched" id="vd_login-error" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect number phone</div>

@@ -3,11 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
-// import { MyDerective } from './my-derective';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MySwichComponent } from './my-swich/my-swich.component';
-// import { PipeComponent } from './my-pipe/pipe.component';
-// import { PowPipe } from './async-load/lazy/pow.pipe';
 import { DynamicPipePipe } from './dynamic-pipe/dynamic-pipe.pipe';
 import { ListPipeComponent } from './list-pipe/list-pipe.component';
 import {LogService} from './services/log-service.service';
@@ -26,15 +23,15 @@ import { ColorsGuardService } from './services/colors-guard.service';
 import { ExitReactFormGuardService } from './services/exit-react-form-guard.service';
 import { SharedModule } from './shared/shared.module';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarsComponent } from './input-test/cars/cars.component';
+import { CarComponent } from './input-test/car/car.component';
+import { FormAddItemComponent } from './input-test/form-add-item/form-add-item.component';
+import { TestComponentComponent } from './test-component/test-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // PowPipe,    
-    // NgStyleComponent,
-    // MyDerective,
     MySwichComponent,
-    // PipeComponent,
     DynamicPipePipe,
     ListPipeComponent,
     PhoneListComponent,
@@ -42,7 +39,11 @@ import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormComponent,
     ColorsComponent,
     TableComandsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CarsComponent,
+    CarComponent,
+    FormAddItemComponent,
+    TestComponentComponent
   ],
   imports: [  
     HttpModule,

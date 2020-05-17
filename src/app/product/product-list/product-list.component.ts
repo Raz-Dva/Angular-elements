@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from '../../services/products.service'
+import {ProductsService} from '../../services/products.service';
+import {faCarrot} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +10,7 @@ import {ProductsService} from '../../services/products.service'
 export class ProductList implements OnInit {
   title:string = 'Products';
   products;
+  faCarrot=faCarrot;
 
   constructor(private productServ : ProductsService) { }
 

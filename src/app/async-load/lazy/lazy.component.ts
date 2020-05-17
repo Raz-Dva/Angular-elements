@@ -13,7 +13,7 @@ export class LazyComponent implements OnInit {
   titleStyle:string='ngStyle';
   titlePipe:string='my Pipe'
   data:number=0;
-  wrong=null;
+  wrong=false;
   condition:boolean=true;
   colorElement:string ='green';
 

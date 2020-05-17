@@ -4,12 +4,15 @@ import { ProductComponent } from './product-description/product.component';
 import { ProductList } from './product-list/product-list.component';
 import { ProductRoutingModul } from './product-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
     ProductRoutingModul,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule,
+
   ], 
   declarations: [ProductComponent, ProductList]
    
