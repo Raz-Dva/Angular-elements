@@ -1,7 +1,25 @@
-# Angular4
+# About
+This is my test app. In this app I have studied the theory on the following questions:
+- Introduction and installation
+- Syntax
+- Components
+- Directives
+- Pipes
+- Services
+- Shapes
+- HTTP
+- Routing
+- Modules
+- Animations
+- Unit test
+
+# Angular6
 This is a project with hints for developing skills and consolidating Angular knowledge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+After downloading the project, run the commands:
+- npm run start
+- json-server --watch db.json
 
 ## Development server
 
