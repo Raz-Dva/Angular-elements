@@ -9,19 +9,19 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ColorsGuardService } from './services/colors-guard.service';
 import { ExitReactFormGuardService } from './services/exit-react-form-guard.service';
 import { PhoneListComponent } from './phoneList/phone-list.component';
-import { ListPipeComponent } from './list-pipe/list-pipe.component';
 import { FormComponent } from './form/form.component';
 import { CarsComponent } from './input-test/cars/cars.component';
-import { TestComponentComponent } from './test-component/test-component.component';
+import { TestComponent } from './test-component/test-component';
+import { CarsPipeComponent } from './cars-pipe/cars-pipe.component';
 
 const appRoutes: Routes=[
   {path: '', component: TableComandsComponent, data: { animation: 'slide1' }},
-  {path: 'test', component: TestComponentComponent, data: { animation: 'slide2' }},
+  {path: 'test', component: TestComponent, data: { animation: 'slide2' }},
   {path: 'decorators', component: CarsComponent, data: { animation: 'slide3' }},
   {path: 'services', component: PhoneListComponent, data: { animation: 'slide4' }},
-  {path: 'pipe', component: ListPipeComponent, data: { animation: 'slide5' }},
+  {path: 'pipe', component: CarsPipeComponent, data: { animation: 'slide5' }},
   {path: 'colors', component: ColorsComponent, data: { animation: 'slide6' }
-  // , canActivate:[ColorsGuardService]
+   , canActivate:[ColorsGuardService]
 },
   {path: 'drivenform', component: FormComponent, data: { animation: 'slide7' }},
   {path: 'reactform', component: ReactiveFormComponent,   canDeactivate: [ExitReactFormGuardService],data: { animation: 'slide8' }},

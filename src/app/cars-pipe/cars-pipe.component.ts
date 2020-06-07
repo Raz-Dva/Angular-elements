@@ -8,11 +8,11 @@ interface Cars {
 
 @Component({
   selector: 'app-list-pipe',
-  templateUrl: './list-pipe.component.html',
-  styleUrls: ['./list-pipe.component.css']
+  templateUrl: './cars-pipe.component.html',
+  styleUrls: ['./cars-pipe.component.css']
 })
 
-export class ListPipeComponent implements 
+export class CarsPipeComponent implements 
 OnInit {
 faPuzzlePiece=faPuzzlePiece;
   title='Pipe';

@@ -1,127 +1,129 @@
-<div class="panel widget ">
-    <div class="panel-heading vd_bg-blue">
-        <h3 class="panel-title" *ngFor="let value of title | async"> <span class="menu-icon"> 
+<div class="wrap_component">
+    <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+            <h3 class="panel-title" *ngFor="let value of title | async"> <span class="menu-icon"> 
             <fa-icon [icon]="faAdjust"></fa-icon>
         </span>{{value.value}}</h3>
-    </div>
-    <div class="panel-body-list pd-15">
-        <div class="panel widget light-widget">
+        </div>
+        <div class="panel-body-list pd-15">
+            <div class="panel widget light-widget">
 
-            <div class="row ">
-                <div class="col-md-12">
-                    <h3>Add new color</h3>
-                </div>
-                <div class="col-md-12">
-                    <!-- ----------- add color ------ -->
-                    <form #colorForm="ngForm" (ngSubmit)='addColor(colorForm)'>
-                        <!-- (ngSubmit)='submitColor(formUser)' -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label class="control-label">Color</label>
-                                <div class="controls">
-                                    <input type="text" placeholder="White" name="color" [(ngModel)]="formColor.color" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="control-label">rgba(255, 255, 255, 1)</label>
-                                <div class="controls controls_rgba" style="display: flex;">
-                                    <input type="number" placeholder="255" name="R" [(ngModel)]="RGBA.r" #colorR="ngModel" required [class.invalid_val]="1000 <= colorR.value">
-
-                                    <input type="number" placeholder="255" name="G" [(ngModel)]="RGBA.g" #colorG="ngModel" required [class.invalid_val]="1000 <= colorG.value">
-
-                                    <input type="number" placeholder="255" name="B" #colorB="ngModel" [(ngModel)]="RGBA.b" required [class.invalid_val]="1000 <= colorB.value">
-
-                                    <input type="number" placeholder="1" name="A" [(ngModel)]="RGBA.a" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="control-label">Hex</label>
-                                <div class="controls">
-                                    <input type="text" placeholder="#FFF" name="hex" [(ngModel)]="formColor.code.hex" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn vd_btn vd_bg-green vd_white" [disabled]="colorForm.invalid">Submit</button>
-                                <button type="reset" class="btn vd_btn vd_bg-green vd_white">Reset</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- ----------- end add color ------ -->
-
-                </div>
-            </div>
-            <div class="help_block_err">
-                <p *ngIf="colorForm.invalid && colorForm.touched" class="help-inline">All fields must be filled</p>
-
-                <p *ngIf="1000 <= colorR.value ||  1000 <= colorG.value || 1000 <= colorB.value" class="help-inline">The number must not exceed 1000</p>
-            </div>
-
-            <!-- <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="addColor()" [disabled]="colorForm.invalid">Add colors</button> -->
-            <!-- ------ change color ------ -->
-            <!--[class.show_el]="showing"  -->
-            <div id="color-table">
-                <div class="change_color_wrap" [style.top]="positionTop" *ngIf="isVisible">
-                    <div>
-                        <p *ngIf="changeForm.invalid && changeForm.touched" class="help-inline">All fields must be filled</p>
-                        <p *ngIf="1000 <= changeR.value ||  1000 <= changeG.value || 1000 <= changeB.value" class="help-inline">The number must not exceed 1000</p>
+                <div class="row ">
+                    <div class="col-md-12">
+                        <h3>Add new color</h3>
                     </div>
-                    <form #changeForm="ngForm" class="change_color_form">
-                        <strong>id {{changeColor.id}}</strong>
-                        <input type="text" style="max-width: 150px;" name="chColor" [(ngModel)]="changeColor.color" placeholder="name color" required>
-                        <div class="controls controls_rgba" style="display: flex;">
+                    <div class="col-md-12">
+                        <!-- ----------- add color ------ -->
+                        <form #colorForm="ngForm" (ngSubmit)='addColor(colorForm)'>
+                            <!-- (ngSubmit)='submitColor(formUser)' -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="control-label">Color</label>
+                                    <div class="controls">
+                                        <input type="text" placeholder="White" name="color" [(ngModel)]="formColor.color" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label">rgba(255, 255, 255, 1)</label>
+                                    <div class="controls controls_rgba" style="display: flex;">
+                                        <input type="number" placeholder="255" name="R" [(ngModel)]="RGBA.r" #colorR="ngModel" required [class.invalid_val]="1000 <= colorR.value">
 
-                            <input type="number" name="chR" [(ngModel)]="chRGBA.r" placeholder="225" required #changeR="ngModel" [class.invalid_val]="1000 <= changeR.value">
+                                        <input type="number" placeholder="255" name="G" [(ngModel)]="RGBA.g" #colorG="ngModel" required [class.invalid_val]="1000 <= colorG.value">
 
-                            <input type="number" name="chG" [(ngModel)]="chRGBA.g" placeholder="225" required #changeG="ngModel" [class.invalid_val]="1000 <= changeG.value">
+                                        <input type="number" placeholder="255" name="B" #colorB="ngModel" [(ngModel)]="RGBA.b" required [class.invalid_val]="1000 <= colorB.value">
 
-                            <input type="number" name="chB" [(ngModel)]="chRGBA.b" placeholder="225" required #changeB="ngModel" [class.invalid_val]="1000 <= changeB.value">
+                                        <input type="number" placeholder="1" name="A" [(ngModel)]="RGBA.a" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="control-label">Hex</label>
+                                    <div class="controls">
+                                        <input type="text" placeholder="#FFF" name="hex" [(ngModel)]="formColor.code.hex" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button style="margin-right: 10px;" type="submit" class="btn vd_btn vd_bg-green vd_white" [disabled]="colorForm.invalid">Submit</button>
+                                    <button type="reset" class="btn vd_btn vd_bg-green vd_white">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- ----------- end add color ------ -->
 
-                            <input type="number " name="chA " [(ngModel)]="chRGBA.a " placeholder="225 " required>
-
-                        </div>
-                        <input type="text " style="max-width: 150px; " name="chHex " [(ngModel)]="changeColor.code.hex " placeholder="HEX #fff " required>
-
-                        <div class=" ">
-                            <!-- <button type="button " (click)="validDataColor(changeR, changeG, changeB) ">Valid</button> -->
-
-                            <!-- <button type="button " (click)="changeDataColor() " [disabled]="changeForm.invalid ">Change</button> -->
-                            <button class="btn vd_btn vd_bg-grey btn_change_form" type="button" (click)="changeDataColor() " [disabled]="changeForm.invalid ">Change</button>
-                            <a class="btn menu-icon vd_bg-grey close_change_form" (click)="isVisible=false"> <i class="fa fa-times"></i> </a>
-
-                        </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="background_layer " *ngIf="isVisible"></div>
+                <div class="help_block_err">
+                    <p *ngIf="colorForm.invalid && colorForm.touched" class="help-inline">All fields must be filled</p>
 
-                <table class="table table-striped table_colors ">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Color</th>
-                            <th>RGBA</th>
-                            <th>HEX</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="odd gradeX " *ngFor="let color of dataColors; let ind=i ndex ">
-                            <td>{{color.id}}</td>
-                            <td>{{color.color}}</td>
-                            <td>{{color.code.rgba.join()}}</td>
-                            <td>{{color.code.hex}}</td>
-                            <td class="menu-action rounded-btn ">
-                                <a class=" color_wiev menu-icon " [ngStyle]="{ 'background-color':color.code.hex} "> </a>
-                                <a class="btn menu-icon vd_bd-yellow vd_yellow " (click)="openChangeForm(color.id, $event) "> <i class="fa fa-pencil "></i> </a>
+                    <p *ngIf="1000 <= colorR.value ||  1000 <= colorG.value || 1000 <= colorB.value" class="help-inline">The number must not exceed 1000</p>
+                </div>
 
-                                <a class="btn menu-icon vd_bd-red vd_red " (click)="removeColor(color) "> <i class="fa fa-times "></i> </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- <button class="btn vd_bg-green vd_white" style="margin-right: 10px;" type="button" (click)="addColor()" [disabled]="colorForm.invalid">Add colors</button> -->
+                <!-- ------ change color ------ -->
+                <!--[class.show_el]="showing"  -->
+                <div id="color-table">
+                    <div class="change_color_wrap" [style.top]="positionTop" *ngIf="isVisible">
+                        <div>
+                            <p *ngIf="changeForm.invalid && changeForm.touched" class="help-inline">All fields must be filled</p>
+                            <p *ngIf="1000 <= changeR.value ||  1000 <= changeG.value || 1000 <= changeB.value" class="help-inline">The number must not exceed 1000</p>
+                        </div>
+                        <form #changeForm="ngForm" class="change_color_form">
+                            <strong>id {{changeColor.id}}</strong>
+                            <input type="text" style="max-width: 150px;" name="chColor" [(ngModel)]="changeColor.color" placeholder="name color" required>
+                            <div class="controls controls_rgba" style="display: flex;">
+
+                                <input type="number" name="chR" [(ngModel)]="chRGBA.r" placeholder="225" required #changeR="ngModel" [class.invalid_val]="1000 <= changeR.value">
+
+                                <input type="number" name="chG" [(ngModel)]="chRGBA.g" placeholder="225" required #changeG="ngModel" [class.invalid_val]="1000 <= changeG.value">
+
+                                <input type="number" name="chB" [(ngModel)]="chRGBA.b" placeholder="225" required #changeB="ngModel" [class.invalid_val]="1000 <= changeB.value">
+
+                                <input type="number " name="chA " [(ngModel)]="chRGBA.a " placeholder="225 " required>
+
+                            </div>
+                            <input type="text " style="max-width: 150px; " name="chHex " [(ngModel)]="changeColor.code.hex " placeholder="HEX #fff " required>
+
+                            <div class=" ">
+                                <!-- <button type="button " (click)="validDataColor(changeR, changeG, changeB) ">Valid</button> -->
+
+                                <!-- <button type="button " (click)="changeDataColor() " [disabled]="changeForm.invalid ">Change</button> -->
+                                <button class="btn vd_btn vd_bg-grey btn_change_form" type="button" (click)="changeDataColor() " [disabled]="changeForm.invalid ">Change</button>
+                                <a class="btn menu-icon vd_bg-grey close_change_form" (click)="isVisible=false"> <i class="fa fa-times"></i> </a>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="background_layer " *ngIf="isVisible"></div>
+
+                    <table class="table table-striped table_colors ">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Color</th>
+                                <th>RGBA</th>
+                                <th>HEX</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd gradeX " *ngFor="let color of dataColors; let ind=i ndex ">
+                                <td>{{color.id}}</td>
+                                <td>{{color.color}}</td>
+                                <td>{{color.code.rgba.join()}}</td>
+                                <td>{{color.code.hex}}</td>
+                                <td class="menu-action rounded-btn ">
+                                    <a class=" color_wiev menu-icon " [ngStyle]="{ 'background-color':color.code.hex} "> </a>
+                                    <a class="btn menu-icon vd_bd-yellow vd_yellow " (click)="openChangeForm(color.id, $event) "> <i class="fa fa-pencil "></i> </a>
+
+                                    <a class="btn menu-icon vd_bd-red vd_red " (click)="removeColor(color) "> <i class="fa fa-times "></i> </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <h2>You can get some colors here <a style="text-decoration: underline; " href="https://htmlcolorcodes.com/color-chart/flat-design-color-chart/">Color list </a></h2>
+                <span class="badge badge-danger badge_error "> {{requestError}} </span>
             </div>
-            <hr>
-            <h2>You can get some colors here <a style="text-decoration: underline; " href="https://htmlcolorcodes.com/color-chart/flat-design-color-chart/">Color list </a></h2>
-            <span class="badge badge-danger badge_error "> {{requestError}} </span>
         </div>
     </div>
 </div>

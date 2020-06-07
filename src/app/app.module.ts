@@ -4,9 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MySwichComponent } from './my-swich/my-swich.component';
 import { DynamicPipePipe } from './dynamic-pipe/dynamic-pipe.pipe';
-import { ListPipeComponent } from './list-pipe/list-pipe.component';
+import { CarsPipeComponent } from './cars-pipe/cars-pipe.component';
 import {LogService} from './services/log-service.service';
 import {DataService} from './services/data-service.service';
 import { PhoneListComponent } from './phoneList/phone-list.component';
@@ -26,14 +25,14 @@ import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarsComponent } from './input-test/cars/cars.component';
 import { CarComponent } from './input-test/car/car.component';
 import { FormAddItemComponent } from './input-test/form-add-item/form-add-item.component';
-import { TestComponentComponent } from './test-component/test-component.component';
+import { TestComponent } from './test-component/test-component';
+import { TestDirective } from './test-component/test.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MySwichComponent,
     DynamicPipePipe,
-    ListPipeComponent,
+    CarsPipeComponent,
     PhoneListComponent,
     FormComponent,
     ReactiveFormComponent,
@@ -43,7 +42,8 @@ import { TestComponentComponent } from './test-component/test-component.componen
     CarsComponent,
     CarComponent,
     FormAddItemComponent,
-    TestComponentComponent
+    TestComponent,
+    TestDirective
   ],
   imports: [  
     HttpModule,

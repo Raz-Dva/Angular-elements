@@ -16,7 +16,7 @@ import {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [' ul > li .active{background-color: #C7C7C7; color: #fff; }'],
+  styles: [' ul > li .active{background-color: #C7C7C7; color: #fff; } ul > li{margin-top:5px}'],
   animations:[
     trigger('routeAnimations', [      
       transition('*=>*', [
@@ -31,8 +31,8 @@ import {
         ], { optional: true }),
         group([
           query(':enter .wrap_component', [
-            style({ left: '-100%'}),
-            animate(2000,
+            style({ left: '-120%'}),
+            animate('700ms cubic-bezier(0.470, -0.125, 0.615, 1.120)',
               style({
                 left:0
               }))
@@ -41,8 +41,8 @@ import {
             style({
               left:0
             }),
-            animate(2000, style({
-              left:'100%'
+            animate('700ms cubic-bezier(0.470, -0.125, 0.615, 1.120)', style({
+              left:'120%'
             }))
           ], { optional: true })
         ])        
@@ -64,7 +64,6 @@ export class AppComponent implements OnInit{
   };
 
   prepareRoute(outlet: RouterOutlet) {
-    console.log( outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']);
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   } 
   

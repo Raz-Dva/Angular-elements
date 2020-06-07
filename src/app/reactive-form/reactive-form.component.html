@@ -1,95 +1,97 @@
-<div class="panel widget">
-    <div class="panel-heading vd_bg-blue">
-        <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-bar-chart-o"></i> </span> {{title}}</h3>
-    </div>
-    <div class="panel-body-list">
-        <div class="form-group col-md">
-            <br>
-            <h2 class="mgbt-xs-10">Form Type 2</h2>
-            <button type="button" class="btn vd_btn vd_bg-yellow" (click)="notAsk('user')">Not ask about exit</button>
-            <h4 _ngcontent-c7="" style="text-align: center;">User Data Json</h4>
-            <p>{{reactiveForm.value | json}}</p>
+<div class="wrap_component">
+    <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+            <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-bar-chart-o"></i> </span> {{title}}</h3>
         </div>
-
-        <!-- ------------------ FORM -------------------------- -->
-        <form class="form-horizontal" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
-            <!-- ------------------ NAME -------------------------- -->
-
-            <div class="form-group">
-                <div class="col-md-6">
-                    <div class="label-wrapper">
-                        <label class="control-label">First Name</label>
-                    </div>
-                    <div class="vd_input-wrapper" id="first-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
-                        <input [ngClass]="{'vd_bd-red': reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched}" formControlName="firstname" type="text" placeholder="John" class="required" required="" name="firstname" id="firstname">
-                    </div>
-                    <p class="vd_soft-grey">These names already exist: user, user123, userstaff</p>
-                </div>
-            </div>
-            <div *ngIf="reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>
-            <!-- ------------------ EMAIL -------------------------- -->
-
-            <div class="form-group">
-                <div class="col-md-6">
-                    <div class="label-wrapper">
-                        <label class="control-label">Email </label>
-                    </div>
-                    <div class="vd_input-wrapper" id="email-input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
-                        <input [ngClass]="{'vd_bd-red': reactiveForm.get('email').invalid && reactiveForm.get('email').touched}" formControlName="email" type="email" placeholder="Email" class="required" required="" name="email" id="email">
-                    </div>
-                </div>
-            </div>
-            <div *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>
-            <!-- ------------------ PHONE NUMBER -------------------------- -->
-
-            <div class="form-group">
-                <div class="col-md-6">
-                    <div class="label-wrapper">
-                        <label class="control-label">Phone </label>
-                    </div>
-                    <div class="vd_input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
-                        <input formControlName="numberPhone" [ngClass]="{'vd_bd-red': reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched}" type="text" placeholder="Number Phone" class="required" required="" name="numberPhone">
-
-                    </div>
-                    <span class="vd_soft-grey">+38(044)777-77-77</span>
-                </div>
-            </div>
-            <div *ngIf="reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched" id="vd_login-error" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect number phone</div>
-            <!-- ------------------ PASSWORD form-group-------------------------- -->
-            <div class="form-group" formGroupName="inconsequential">
-                <div class="col-md-6">
-                    <div class="label-wrapper">
-                        <label class="control-label">Password </label>
-                    </div>
-                    <div class="vd_input-wrapper" id="password-input-wrapper"> <span class="menu-icon"> <i class="fa fa-lock"></i> </span>
-                        <input [ngClass]="{'vd_bd-red': reactiveForm.get('inconsequential.password').invalid && reactiveForm.get('inconsequential.password').touched}" formControlName="email" formControlName="password" type="password" placeholder="Password" class="required" required=""
-                            name="password" id="password">
-                    </div>
-                </div>
-
-                <div *ngIf="reactiveForm.get('inconsequential.password').invalid && reactiveForm.get('inconsequential.password').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i>
-                    <span *ngIf="reactiveForm.get('inconsequential.password').errors['required']">This field must not be empty.</span>
-                    <span *ngIf="reactiveForm.get('inconsequential.password').errors['lengthError']">Password must be more than {{charsCount}} characters.</span>
-
-                </div>
-
-                <!-- ------------------ CHECKBOX -------------------------- -->
-                <div class="col-md-12 mgbt-xs-10 mgtp-10">
-                    <div class="vd_checkbox">
-                        <input formControlName="checkbox" type="checkbox" id="checkbox-2" name="checkbox" required>
-                        <label for="checkbox-2"> I agree with <a href="#">terms of service</a></label>
-                    </div>
-                </div>
-                <!-- ------------------ SUBMIT -------------------------- -->
-
-                <div class="col-md-12 mgbt-xs-5">
-                    <button [disabled]="reactiveForm.invalid" class="btn vd_bg-green vd_white" type="submit" id="submit-register" name="submit-register">Register</button>
-
-                    <!--  -->
-                </div>
+        <div class="panel-body-list">
+            <div class="form-group col-md">
                 <br>
-                <pre *ngIf="isSubmited">{{preForm | json}}</pre>
+                <h2 class="mgbt-xs-10">Form Type 2</h2>
+                <button type="button" class="btn vd_btn vd_bg-yellow" (click)="notAsk('user')">Not ask about exit</button>
+                <h4 _ngcontent-c7="" style="text-align: center;">User Data Json</h4>
+                <p>{{reactiveForm.value | json}}</p>
             </div>
-        </form>
+
+            <!-- ------------------ FORM -------------------------- -->
+            <form class="form-horizontal" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                <!-- ------------------ NAME -------------------------- -->
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <div class="label-wrapper">
+                            <label class="control-label">First Name</label>
+                        </div>
+                        <div class="vd_input-wrapper" id="first-name-input-wrapper"> <span class="menu-icon"> <i class="fa fa-user"></i> </span>
+                            <input [ngClass]="{'vd_bd-red': reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched}" formControlName="firstname" type="text" placeholder="John" class="required" required="" name="firstname" id="firstname">
+                        </div>
+                        <p class="vd_soft-grey">These names already exist: user, user123, userstaff</p>
+                    </div>
+                </div>
+                <div *ngIf="reactiveForm.get('firstname').invalid && reactiveForm.get('firstname').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>
+                <!-- ------------------ EMAIL -------------------------- -->
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <div class="label-wrapper">
+                            <label class="control-label">Email </label>
+                        </div>
+                        <div class="vd_input-wrapper" id="email-input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
+                            <input [ngClass]="{'vd_bd-red': reactiveForm.get('email').invalid && reactiveForm.get('email').touched}" formControlName="email" type="email" placeholder="Email" class="required" required="" name="email" id="email">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect data</div>
+                <!-- ------------------ PHONE NUMBER -------------------------- -->
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <div class="label-wrapper">
+                            <label class="control-label">Phone </label>
+                        </div>
+                        <div class="vd_input-wrapper"> <span class="menu-icon"> <i class="fa fa-envelope"></i> </span>
+                            <input formControlName="numberPhone" [ngClass]="{'vd_bd-red': reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched}" type="text" placeholder="Number Phone" class="required" required="" name="numberPhone">
+
+                        </div>
+                        <span class="vd_soft-grey">+38(044)777-77-77</span>
+                    </div>
+                </div>
+                <div *ngIf="reactiveForm.get('numberPhone').invalid && reactiveForm.get('numberPhone').touched" id="vd_login-error" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i> Incorect number phone</div>
+                <!-- ------------------ PASSWORD form-group-------------------------- -->
+                <div class="form-group" formGroupName="inconsequential">
+                    <div class="col-md-6">
+                        <div class="label-wrapper">
+                            <label class="control-label">Password </label>
+                        </div>
+                        <div class="vd_input-wrapper" id="password-input-wrapper"> <span class="menu-icon"> <i class="fa fa-lock"></i> </span>
+                            <input [ngClass]="{'vd_bd-red': reactiveForm.get('inconsequential.password').invalid && reactiveForm.get('inconsequential.password').touched}" formControlName="email" formControlName="password" type="password" placeholder="Password" class="required" required=""
+                                name="password" id="password">
+                        </div>
+                    </div>
+
+                    <div *ngIf="reactiveForm.get('inconsequential.password').invalid && reactiveForm.get('inconsequential.password').touched" id="vd_login-error" class="alert alert-danger "><i class="fa fa-exclamation-circle fa-fw"></i>
+                        <span *ngIf="reactiveForm.get('inconsequential.password').errors['required']">This field must not be empty.</span>
+                        <span *ngIf="reactiveForm.get('inconsequential.password').errors['lengthError']">Password must be more than {{charsCount}} characters.</span>
+
+                    </div>
+
+                    <!-- ------------------ CHECKBOX -------------------------- -->
+                    <div class="col-md-12 mgbt-xs-10 mgtp-10">
+                        <div class="vd_checkbox">
+                            <input formControlName="checkbox" type="checkbox" id="checkbox-2" name="checkbox" required>
+                            <label for="checkbox-2"> I agree with <a href="#">terms of service</a></label>
+                        </div>
+                    </div>
+                    <!-- ------------------ SUBMIT -------------------------- -->
+
+                    <div class="col-md-12 mgbt-xs-5">
+                        <button [disabled]="reactiveForm.invalid" class="btn vd_bg-green vd_white" type="submit" id="submit-register" name="submit-register">Register</button>
+
+                        <!--  -->
+                    </div>
+                    <br>
+                    <pre *ngIf="isSubmited">{{preForm | json}}</pre>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

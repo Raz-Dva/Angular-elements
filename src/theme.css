@@ -7504,22 +7504,5 @@ body {
     height: auto;
 }
 
-footer {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px;
-}
-
-main {
-    /* background: #ffb3b3; */
-}
-
-.wrap {
-    border: 1px solid red;
-}
-
 
 /* ---------my style end---------- */
