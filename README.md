@@ -18,8 +18,9 @@ This is a project with hints for developing skills and consolidating Angular kno
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 After downloading the project, run the commands:
+- npm install
 - npm run start
-- json-server --watch db.json
+- npm run json:server or json-server --watch db.json
 
 ## Development server
 
