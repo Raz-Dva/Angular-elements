@@ -1,0 +1,16 @@
+runtime: custom
+env: flex
+manual_scaling:
+  instances: 1
+  
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+env_variables:
+  DB_USER: "test_ang_user"
+  DB_NAME: "ang_db"
+  DB_PASS: "volonter13"
+  DB_INSTANCE: "project-name:us-central1:sql-instance"
+  TESTVAR: "hehehe"
