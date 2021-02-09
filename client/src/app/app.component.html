@@ -1,0 +1,95 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="wrap">
+  <main>
+    <div class="container">
+      <!-- ------------ header --------- -->
+      <ul class="nav head_nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="''"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >npm commands</a
+          >
+        
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="'/decorators'"
+            routerLinkActive="active"
+            >@Input-@Output</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services" routerLinkActive="active">
+            Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pipe" routerLinkActive="active">
+            Pipe</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/products">
+            Products(Routing)
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lazyRoute" routerLinkActive="active"
+            >Async load</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/drivenform" routerLinkActive="active"
+            >Driven forms</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reactform" routerLinkActive="active"
+            >React Form*</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/colors" routerLinkActive="active"
+            >Colors**</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/test'" routerLinkActive="active"
+            >Unit test</a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            class="btn vd_bg-red vd_white nav_button"
+            (click)="linkFormComponent()"
+          >
+            FormComponent
+          </button>
+        </li>        
+      </ul>
+      <p>
+        <span class="help-inline">* - use Guard canDeactivate</span>
+      </p>
+      <p>
+        <span class="help-inline">** - use Guard CanActivate </span>
+      </p>
+      <hr />
+      <div>
+        <div
+          [@routeAnimations]="prepareRoute(outlet)"
+          id="wrap_outlet"
+          style="position: relative"
+        >
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+      </div>
+      <br/>    
+    </div>
+  </main>
+</div>

@@ -1,0 +1,42 @@
+<div class="wrap_component">
+  <div class="wrap_input" #wrap style="overflow: hidden">
+    <div class="panel widget">
+      <div class="panel-heading vd_bg-blue">
+        <h3 class="panel-title">
+          <span class="menu-icon">
+            <fa-icon [icon]="faArrowsAltH"></fa-icon>
+          </span>
+          {{ title }}
+        </h3>
+      </div>
+      <div class="panel-body-list" style="padding-bottom: 40px">
+        <app-form-add-item
+          (onAddCar)="updateCarsList($event)"
+        ></app-form-add-item>
+        <hr />
+        <div class="col-sm-10">
+          <h1>app cars</h1>
+          <app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+        </div>
+        <br />
+        <hr />
+        <div class="col-sm-12">
+          <div>
+            <h2>
+              In this component I used the @Input() and @Output() directives.
+            </h2>
+          </div>
+          <a
+            rel="nofollow"
+            target="_blank"
+            href="../../../assets/img/Output-Input schema.png"
+            ><img
+              class="zoom"
+              src="../../../assets/img/Output-Input schema.png"
+              alt=""
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

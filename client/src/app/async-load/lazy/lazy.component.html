@@ -1,0 +1,128 @@
+<div class="wrap_component">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+          <h3 class="panel-title">
+            <span class="menu-icon">
+              <fa-icon [icon]="faBars"></fa-icon>
+            </span>
+            {{ titleClass }}
+          </h3>
+        </div>
+        <div class="panel-body-list pd-15" style="min-height: 234px">
+          <div class="input-group mgbt-xs-15">
+            <div class="panel widget light-widget">
+              <div class="vd_checkbox checkbox-danger">
+                <input
+                  id="checkbox-3"
+                  type="checkbox"
+                  name="checkClass"
+                  [(ngModel)]="wrong"
+                />
+                <label for="checkbox-3"> Remove Alert</label>
+              </div>
+              <div
+                class="alert alert-success"
+                [ngClass]="{ 'alert-display': wrong }"
+              >
+                <span class="vd_alert-icon"
+                  ><i class="fa fa-check-circle vd_green"></i
+                ></span>
+                <a href="#" class="alert-link">This important alert message</a>.
+                Check the box to remove the alert usage class
+                <strong>.alert-display &#123; display: none; &#125;</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+          <h3 class="panel-title">
+            <span class="menu-icon"> <fa-icon [icon]="faBars"></fa-icon> </span>
+            {{ tittleIf }}
+          </h3>
+        </div>
+        <div class="panel-body-list pd-15">
+          <div *ngIf="condition; then thenBlock; else elseBlock"></div>
+          <ng-template #thenBlock>
+            <div class="vd_status-widget vd_bg-red widget">
+              <a href="#" (click)="toggle($event)">
+                <div class="clearfix">
+                  <span class="menu-value"> true </span>
+                </div>
+                <div class="menu-text clearfix">*ngIf</div>
+              </a>
+            </div>
+          </ng-template>
+          <ng-template #elseBlock>
+            <div class="vd_status-widget vd_bg-blue widget">
+              <a href="#" (click)="toggle($event)">
+                <div class="clearfix">
+                  <span class="menu-value"> false </span>
+                </div>
+                <div class="menu-text clearfix">*ngIf</div>
+              </a>
+            </div>
+          </ng-template>
+
+          <button
+            style="margin-top: 10px"
+            class="btn vd_btn vd_bg-green"
+            (click)="toggle($event)"
+          >
+            Toggle
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+          <h3 class="panel-title">
+            <span class="menu-icon"> <fa-icon [icon]="faBars"></fa-icon> </span>
+            {{ titleStyle }}
+          </h3>
+        </div>
+        <div class="panel-body-list pd-15">
+          <p [style.color]="colorElement">
+            <strong
+              >Enter color to change this text color. Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. For example 'red' or 'grey'</strong
+            >
+          </p>
+          <br />
+          <input type="text" name="color" [(ngModel)]="colorElement" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel widget">
+        <div class="panel-heading vd_bg-blue">
+          <h3 class="panel-title">
+            <span class="menu-icon">
+              <fa-icon [icon]="faBars"></fa-icon>
+            </span>
+            My Derective
+          </h3>
+        </div>
+        <div class="panel-body-list pd-15">
+          <div class="input-group mgbt-xs-15">
+            <div class="panel widget light-widget">
+              <div>
+                <p appMyDerective color="grey">
+                  This is my derective. The style of this paragraph is created
+                  using "renderer.setStyle (this.elementRef.nativeElement,
+                  "font-weight", "bold");"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

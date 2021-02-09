@@ -1,0 +1,41 @@
+<div class="wrap_component">
+  <div class="panel widget">
+    <div class="panel-heading vd_bg-blue">
+      <h3 class="panel-title">
+        <span class="menu-icon"> <fa-icon [icon]="faCarrot"></fa-icon> </span
+        >{{ title }}
+      </h3>
+    </div>
+    <div class="panel-body-list pd-15">
+      <div class="input-group mgbt-xs-15">
+        <div class="panel widget light-widget">
+          <div class="panel-body" style="padding-bottom: 0; padding-top: 0">
+            <router-outlet></router-outlet>
+            <h2>Other products:</h2>
+            <ul class="nav_products" style="padding-inline-start: 0">
+              <li *ngFor="let product of products">
+                <a
+                [routerLink]="['/products', product._id, product.title]"
+                  [queryParams]="{
+                    available: product.available,
+                    country: product.country,
+                    image: product.image
+                  }"
+                  routerLinkActive="active"
+                  [fragment]="product.fragment"
+                >
+                  <span>Title: </span>
+                  <strong>{{ product.title }} </strong>
+                  <span>ID: </span>
+                  <strong>{{ product._id }}</strong>
+                </a>
+              </li>
+            </ul>
+            <p><span class="badge badge-danger badge_error"> {{ requestError }} </span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

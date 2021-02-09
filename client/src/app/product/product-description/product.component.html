@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6">
+    <div class="wrap-img_product">
+      <img src="./assets/img/{{ image }}" alt="" />
+    </div>
+  </div>
+  <div class="col-6">
+    <h3><strong>ID:</strong>{{ id }}</h3>
+    <h3><strong>Title:</strong> {{ title }}</h3>
+    <h3><strong>Available:</strong> {{ available }}</h3>
+    <h3><strong>Country:</strong> {{ country }}</h3>
+    <h3><strong>Img:</strong> {{ image }}</h3>
+
+    <h5 headColor>Hash : {{ hash }}</h5>
+    <hr />
+    <p><strong>Popular products</strong></p>
+    <a
+      [routerLink]="['/products', 2, 'B&O TV']"
+      [queryParams]="{ available: 'no', country: 'France', image: '5.jpg' }"
+      [fragment]="'anchor6'"
+      >B&O TV--2</a
+    >
+    <br />
+    <button type="button" (click)="openToshiba()">Go to Toshiba</button>
+  </div>
+</div>
+<hr />
