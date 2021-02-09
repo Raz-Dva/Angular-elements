@@ -11,7 +11,9 @@ Commands to run after cloning a project
 
 - npm install
 - npm run install-ang
+
 After installing all dependencies, run the command
+
 - npm run start-ang
 - npm run start
 
