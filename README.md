@@ -10,11 +10,10 @@ When deploying a project in the color tab, it is possible to save, delete and ed
 Commands to run after cloning a project
 
 - npm install
-- npm run install-ang
-
-After installing all dependencies, run the command
-
-- npm run start-ang
+- npm run start
+- cd client
+- npm install
 - npm run start
 
+After installing all dependencies, run the command
 Open the browser tab at http://localhost:4200/
