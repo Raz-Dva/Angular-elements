@@ -2,4 +2,6 @@
 /client/node_modules
 .idea
 .vercel
-
+/client/dist
+.yaml
+.gitignore
