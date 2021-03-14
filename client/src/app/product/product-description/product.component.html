@@ -5,15 +5,15 @@
     </div>
   </div>
   <div class="col-6">
-    <h3><strong>ID:</strong>{{ id }}</h3>
-    <h3><strong>Title:</strong> {{ title }}</h3>
-    <h3><strong>Available:</strong> {{ available }}</h3>
-    <h3><strong>Country:</strong> {{ country }}</h3>
-    <h3><strong>Img:</strong> {{ image }}</h3>
+    <h3><span class="span-strong">ID:</span>{{ id }}</h3>
+    <h3><span class="span-strong">Title:</span> {{ title }}</h3>
+    <h3><span class="span-strong">Available:</span> {{ available }}</h3>
+    <h3><span class="span-strong">Country:</span> {{ country }}</h3>
+    <h3><span class="span-strong">Img:</span> {{ image }}</h3>
 
     <h5 headColor>Hash : {{ hash }}</h5>
     <hr />
-    <p><strong>Popular products</strong></p>
+    <p class="p-strong">Popular products</p>
     <a
       [routerLink]="['/products', 2, 'B&O TV']"
       [queryParams]="{ available: 'no', country: 'France', image: '5.jpg' }"
@@ -21,7 +21,7 @@
       >B&O TV--2</a
     >
     <br />
-    <button type="button" (click)="openToshiba()">Go to Toshiba</button>
+    <button type="button" (click)="openToshiba()" role="link">Go to Toshiba</button>
   </div>
 </div>
 <hr />

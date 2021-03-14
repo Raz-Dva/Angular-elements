@@ -18,7 +18,8 @@ export interface Product {
   styles: [`
   .nav_products >li > a.active{background-color: #C7C7C7;}
   a{text-decoration: underline;}
-  .panel .widget{width:100%}`]
+  .panel .widget{width:100%}
+  .p-strong, .span-strong{font-weight:bold}`]
 })
 export class ProductList implements OnInit {
   title: string = 'Products';

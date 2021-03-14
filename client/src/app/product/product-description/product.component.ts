@@ -6,7 +6,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   templateUrl: './product.component.html',
   styles: [`
   .wrap-img_product{height:290px}
-  img{max-height: 100%; max-width: 100%}`]
+  img{max-height: 100%; max-width: 100%}
+  .p-strong, .span-strong{font-weight:bold}`]
 })
 export class ProductComponent implements OnInit {
   id: number;

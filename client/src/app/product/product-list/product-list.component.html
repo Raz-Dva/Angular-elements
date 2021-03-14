@@ -11,7 +11,7 @@
         <div class="panel widget light-widget">
           <div class="panel-body" style="padding-bottom: 0; padding-top: 0">
             <router-outlet></router-outlet>
-            <h2>Other products:</h2>
+            <h3>Other products:</h3>
             <ul class="nav_products" style="padding-inline-start: 0">
               <li *ngFor="let product of products">
                 <a
@@ -25,9 +25,9 @@
                   [fragment]="product.fragment"
                 >
                   <span>Title: </span>
-                  <strong>{{ product.title }} </strong>
+                  <span class="span-strong">{{ product.title }} </span>
                   <span>ID: </span>
-                  <strong>{{ product._id }}</strong>
+                  <span class="span-strong">{{ product._id }}</span>
                 </a>
               </li>
             </ul>

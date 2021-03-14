@@ -99,7 +99,8 @@ export class ColorsComponent implements OnInit {
     this.visibilitySpinner = true
     this.colorsServ.deleteItem(data).subscribe(response => {
       this.getColors();
-      return response;
+      // console.log(response) 
+      // return response;
     });
   };
   openChangeForm(color, ev) {
@@ -113,7 +114,8 @@ export class ColorsComponent implements OnInit {
     this.colorsServ.changeItem(this.changeColor).subscribe(response => {
       this.getColors();
       this.isVisible = false;
-      return response;
+      // console.log(response) 
+      // return response;
     })
   };
 }

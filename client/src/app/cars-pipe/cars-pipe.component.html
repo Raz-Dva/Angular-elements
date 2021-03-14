@@ -30,7 +30,7 @@
                             <hr>
                         </div>
                         <div class="col-xl-12">
-                            <strong style="margin-right: 10px; vertical-align:super;" class="control-label">Filter the list</strong>
+                            <span style="margin-right: 10px; vertical-align:super; font-weight: bold;" class="control-label">Filter the list</span>
                             <label style="vertical-align:super" for="checkCriteria">Sorted by</label>
                             <div class="bootstrap-switch bootstrap-switch-blue bootstrap-switch-small bootstrap-switch-criteria">
                                 <div class="bootstrap-switch-container switcher">
@@ -51,7 +51,7 @@
                         <div class="col-xl-12">
                             <ul style="padding-left: 0;">
                                 <li class="mgbt-xs-10" *ngFor="let item of listCar |dynamicPipe:findLetter:searchCriteria; let ind = index ">
-                                    <strong>{{ind + 1}}) {{item.name}} ---- {{item.age}}</strong>
+                                    <span>{{ind + 1}}) {{item.name}} ---- {{item.age}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -72,9 +72,9 @@
           <div class="input-group mgbt-xs-15">
             <div class="panel widget light-widget">
               <input type="text" [(ngModel)]="data" />
-              <strong>number of degree 3 --{{ data | appPow: 3:"," }}</strong>
+              <span>number of degree 3 --{{ data | appPow: 3:"," }}</span>
               <br />
-              <strong>number of degree 10-- {{ data | appPow: 10:"." }}</strong>
+              <span>number of degree 10-- {{ data | appPow: 10:"." }}</span>
             </div>
           </div>
         </div>

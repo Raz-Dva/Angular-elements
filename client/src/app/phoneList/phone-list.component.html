@@ -10,7 +10,7 @@
                 <div class="panel widget light-widget">
                     <div class="wrap_alert_hidden">
                         <div class="alert alert-success vd_hidden hint_success" #hint_success>
-                            <span class="vd_alert-icon"><i class="fa fa-check-circle vd_green"></i></span><strong class="message_text"></strong>
+                            <span class="vd_alert-icon"><i class="fa fa-check-circle vd_green"></i></span><span class="message_text"></span>
                         </div>
                         <div class="alert alert-danger vd_hidden hint_error" #hint_error> <span class="vd_alert-icon "><i class="fa fa-exclamation-circle vd_red "></i></span><strong class="message_text"></strong>
                         </div>
@@ -25,7 +25,7 @@
 
                     <button class="btn vd_btn vd_bg-green " (click)="addPhone([hint_success, hint_error]) ">Add Phone</button>
                     <ul style="padding-left: 0; margin-top: 10px; ">
-                        <li *ngFor="let phone of phoneList; let ind=index "><strong>{{ind+1}}) {{phone.name}} --- {{phone.model}}</strong> </li>
+                        <li *ngFor="let phone of phoneList; let ind=index "><span>{{ind+1}}) {{phone.name}} --- {{phone.model}}</span> </li>
                     </ul>
                 </div>
             </div>

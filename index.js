@@ -51,13 +51,14 @@ app.get('/api/colors', (req, res, next) => {
         res.status(200).json(result)
     });
 });
-// ---------------- PUT Colors
+// ---------------- PUT  (change) Colors
 app.put('/api/put/:id', (req, res, next) => {
     Colors.updateOne({ _id: req.params.id }, req.body, function (err, result) {
         if (err || result == null) {
             console.log('Error /put ' + err);
             return next(err);
         };
+        // process response after change   res.json(result)
         res.status(200).json(result)
     });
 });
@@ -65,13 +66,15 @@ app.put('/api/put/:id', (req, res, next) => {
 // ---------------- DELETE Colors
 app.delete('/api/delete/:id', 
 (req, res, next) => {
-    console.log('api delete is run')
+    // console.log('api delete is run')
     Colors.findOneAndDelete({ _id: req.params.id }, function (err, result) {
         if (err || result == null) {
             console.log('Error /delete ' + err);
             return next(err);
         };
-        res.status(200).json(result)
+        // console.log(result)
+        // process response after deletion   res.json(result)
+        res.status(200)
     }); }
 );
 
