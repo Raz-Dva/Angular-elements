@@ -1,5 +1,5 @@
 const express = require('express'),
-    cors = require('cors'),
+    cors = require('cors'),    
     port = process.env.PORT || 3000,
     app = express(),
     path = require('path'),
@@ -7,6 +7,7 @@ const express = require('express'),
     mongoose = require('mongoose'),
     Colors = require('./model/color'),
     Product = require('./model/products');
+    require("dotenv").config();
 // ----------------------------------------------
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,9 +16,9 @@ app.use(express.static(path.join(__dirname + '/dist')));
 
 // ------------------------------------
 mongoose.connect(
-    'mongodb+srv://test_ang_user:volonter13@cluster0.ief1o.mongodb.net/ang_db?retryWrites=true&w=majority',
+    // 'mongodb+srv://test_ang_user:volonter13@cluster0.ief1o.mongodb.net/ang_db?retryWrites=true&w=majority',
 
-    // 'mongodb+srv://' + process.env.DB_USER +':' + process.env.DB_PASS + '@cluster0.ief1o.mongodb.net/' + process.env.DB_NAME + '?retryWrites=true&w=majority',
+    'mongodb+srv://' + process.env.DB_USER +':' + process.env.DB_PASS + '@cluster0.ief1o.mongodb.net/' + process.env.DB_NAME + '?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
     (err) => {
         if (err) {
@@ -58,7 +59,6 @@ app.put('/api/put/:id', (req, res, next) => {
             console.log('Error /put ' + err);
             return next(err);
         };
-        // process response after change   res.json(result)
         res.status(200).json(result)
     });
 });
@@ -72,8 +72,6 @@ app.delete('/api/delete/:id',
             console.log('Error /delete ' + err);
             return next(err);
         };
-        // console.log(result)
-        // process response after deletion   res.json(result)
         res.status(200)
     }); }
 );
