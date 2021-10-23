@@ -20,7 +20,8 @@
     "start-ang": "npm run start --prefix./client",
     "build-ang": "npm run build --prefix./client",
     "dev": "nodemon index",
-    "start": "node index.js && build-ang"
+    "start": "node index.js",
+    "heroku-postbuild": "npm run build --prefix./client"
   },
   "author": "",
   "license": "ISC"
